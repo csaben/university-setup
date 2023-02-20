@@ -11,7 +11,8 @@ import subprocess
 from config import get_week, DATE_FORMAT, CURRENT_COURSE_ROOT
 
 # TODO
-locale.setlocale(locale.LC_TIME, "nl_BE.utf8")
+locale.setlocale(locale.LC_ALL,'en_US.UTF-8')
+# locale.setlocale(locale.LC_TIME, "nl_BE.utf8")
 
 
 def number2filename(n):
