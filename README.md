@@ -6,6 +6,7 @@ His [third blog post this note taking setup](https://castel.dev/post/lecture-not
 
 #### File structure
 
+(currently not using gilles style; see explicit repos at root)
 ```
 ROOT
 ├── junior-semester

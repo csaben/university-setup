@@ -1,0 +1,15 @@
+# Fdb version 3
+["pdflatex"] 1676984690 "notes_04.tex" "notes_04.pdf" "notes_04" 1676984690
+  "/etc/texmf/web2c/texmf.cnf" 1673610653 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def" 1580854751 25404 9d60f463a00d154207ec0048dee27cf0 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1673636624 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1673636659 8265354 473419e96cd72c8dbdbad394b667403d ""
+  "notes_04.aux" 1676984672 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "notes_04.tex" 1676984689 1619 63f359b9199d21c6545e68fab1e0403d ""
+  (generated)
+  "notes_04.aux"
+  "notes_04.log"
+  "notes_04.pdf"

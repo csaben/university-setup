@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts} % enable the use of \mathbb
+\usepackage{physics}
+
+
+
+\title{Lecture 1}
+\author{Clark Saben}
+
+\begin{document}
+% define commands for special state vectors, p means positive, n means negative
+\newcommand{\pz}{\ket{\vb{+z}}}
+\newcommand{\nz}{\ket{\vb{-z}}}
+\newcommand{\px}{\ket{\vb{+x}}}
+\newcommand{\nx}{\ket{\vb{-x}}}
+\newcommand{\py}{\ket{\vb{+z}}}
+\newcommand{\ny}{\ket{\vb{-y}}}
+
+% writes expression of |+x> etc. in |z> basis
+\newcommand{\pxexpr}{ \frac{1}{\sqrt{2}} \pz + \frac{1}{\sqrt{2}} \nz}
+\newcommand{\nxexpr}{ \frac{1}{\sqrt{2}} \pz - \frac{1}{\sqrt{2}} \nz}
+\newcommand{\pyexpr}{ \frac{1}{\sqrt{2}} \pz + \frac{i}{\sqrt{2}} \nz}
+\newcommand{\nyexpr}{ \frac{1}{\sqrt{2}} \pz - \frac{i}{\sqrt{2}} \nz}
+\maketitle
+
+\section{2/21/23 lecture}
+
+\begin{enumerate}
+	\item $V=0$ everywhere (trivial)
+	\item more meaningful solutions agree with the boundary conditions(b.c.) and vary in some region as $V(x,y,z)$.
+\end{enumerate}
+	%see notes
+
+Dirichlet b.c.:\\
+\begin{enumerate}
+\item $V(x=5m)= 0 = m(5) +b  => b=-5m$
+\item $V(x=1)= 4 = m(1) + (-5m) = -4m => m=-1$
+\end{enumerate}
+
+Hence,\\
+
+$V(x) = (5-x )$ Volts \\
+$E_x = -1$ V/m \\
+
+\begin{itemize}
+	\item Solution is generally a linear function
+	\item consider $V(x+a) = mx + b  + ma$
+	\item and      $V(x-a) = mx + b  - ma$\\
+\end{itemize}
+
+$V(x)$ is the average of these expressions (explicitly shown below).\\
+
+$V(x) = \frac{1}{2} (V(x+a) + V(x-a))$\\
+
+Laplace's equations is like an averageing instruction (1D, 2D, 3D).\\
+
+%see notes for fig
+
+$\nabla^2 V = 0$\\
+$\implies$ No maxium or minimum inside of the volume of the space. 
+And the only extrema exists at the boundary\\
+
+i.e. $\left(\frac{dV}{dn}= \frac{-\sigma}{\epsilon_0}\right)$\\
+
+
+There are two types of b.c.'s:\\
+\begin{enumerate}
+	\item Dirichlet b.c. : $V$ is fixed by some external means at the surface $dV$ (e.g. grounded)
+	\item Neumann b.c. : The value of $\vec{\nabla}V . \hat{n}$ at the 
+		surface AV is fixed ( the normal derivate is fixed, i.e. 
+		$\frac{dV}{dn} = ____$ is fixed
+\end{enumerate}
+
+There are actually two uniqueness theorems but we will only be using the first one in this class.\\
+\begin{enumerate}
+	\item Theorem 1: With either b.c. (1) or (2) chosen, at surface $dV$,
+		there is a unique solution $V(x,y,z)$ to Laplace's equation
+		in a region of space.
+\end{enumerate}
+
+Proof:\\
+Suppose we have a function $f=V_1 - V_2$, where $V_1$ and $V_2$ satisfy \nabla^2 V_i = 0.\\
+
+%uhh purely copilot
+% Then, $\nabla^2 f = \nabla^2 (V_1 - V_2) = \nabla^2 V_1 - \nabla^2 V_2 = 0 - 0 = 0$\\
+\begin{align*}
+{\int_V \vec{\nabla} \cdot \left(f\vec{\nabla}f\right) d^3x} &= \int_V\left(\vec{\nabla}f \cdot \vec{\nabla}f) + f \left(\nabla^2 f \right)\right)d^3x\\
+							     &= \int_V \left(\vec{\nabla}f \cdot \vec{\nabla}f \right) d^3x \text{  Div. Thm}\\
+							     &= \int_{dV} f\vec{\nabla}f \cdot d\vec{a}\\
+\end{align*}
+$\nabla^2f$ becomes zero, hence the simplification\\
+
+A) Suppose we pick a situation where Dirichlet b.c. conditions are used.\\
+Then, $V_1$ and $V_2$ are both solutions to Laplace's equation. Hence, they 
+have the same value at the boundary ($dV \left(V_1=V_2=V_{fixed})$)\\
+
+$f=0$ in volume $V$ too, or else on extrema would occur inside region.\\
+
+Suppose $f>0$ inside $V$, in order to go to zero at $dV$ or $f$ would have some
+max insde $V$ ($\nabla^2 f \neq 0$): contradiction.\\
+
+$\implies f=0$  or $V_1=V_2$ is unique.\\
+
+B) Suppose we pick a situation where Neumann b.c. conditions are used.
+Then, $\vec{\nabla}f = 0$ at $dV$ (since $\vec{\nabla}V_1 . \hat{n}_ = \vec{\nabla}V_2 . \hat{n}_$)\\
+
+%see notes 
+
+%how to make this indent same for all three lines
+Within Volume $V$ $\vec{\nabla}f=0$ too since,\\
+\oint_{aV} f\vec{\nabla}f \cdot d\vec{a} = 0 \implies \int_V |\vec{\nabla}f|^2 d^3x$\\
+since $\vec{\nabla}f = 0$ everywhere\\
+
+Here, we have a gauge freedom. This can be seen because 
+$V_1 = V_2 + V_0$ for some $V_0$ (constant).\\
+
+\begin{itemize}
+	\item Physics only cares about how the $V$ changes ( $\vec{E} = -\vec{\nabla}V$))
+\end{itemize}
+
+
+e.g. of B) Parallel Plates\\
+
+Say, $|\vec{B}| = |\frac{\grad{V}}{d}| = 1000$ V/m\\
+
+%see notes for figure
+
+$\vec{E} $ will always be in direction of lower potential.
+
+Separation of variables\\
+
+Goal: Find $V(x,y,z)$ such that $\nabla^2 V = 0$\\
+
+In 3D we have 6 total b.c.'s.\\
+
+Working under assumption of $V(x,y,z) = f(x^{1})g(x^{2})h(x^{3})$ s.t. superscripts represent different x's\\
+
+The solutions depend on coordinate system:
+\begin{enumerate}
+	\item Cartesian: x,y,z or $x^1, x^2, x^3$ $\implies$ sines/cosines, exponentials
+	\item Cylindrical: s,$\rho$,z $\implies$ Bessel functions: $J^n$, $K^{n}$
+	\item Spherical: r, $\theta$, $\phi$ $\implies$ Legendre Polynomials
+		(i.e. new trancendental functions)
+\end{enumerate}
+
+\begin{enumerate}
+	\item Cartesian
+		%see notes
+\end{enumerate}
+
+\begin{itemize}
+	\item $c<0$, $c<-k^2 \implies $\frac{f"}{f}=-k^{2} $ s.t. k is constant
+		%notes
+\end{itemize}
+		%see notes
+
+e.g. 2D) 
+%see notes for image
+
+
+
+
+
+
+
+
+%see notes
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts} % enable the use of \mathbb
+\usepackage{physics}
+
+
+
+\title{A Modern Physics Review}
+\author{Clark Saben}
+
+\begin{document}
+% define commands for special state vectors, p means positive, n means negative
+\newcommand{\pz}{\ket{\vb{+z}}}
+\newcommand{\nz}{\ket{\vb{-z}}}
+\newcommand{\px}{\ket{\vb{+x}}}
+\newcommand{\nx}{\ket{\vb{-x}}}
+\newcommand{\py}{\ket{\vb{+z}}}
+\newcommand{\ny}{\ket{\vb{-y}}}
+
+% writes expression of |+x> etc. in |z> basis
+\newcommand{\pxexpr}{ \frac{1}{\sqrt{2}} \pz + \frac{1}{\sqrt{2}} \nz}
+\newcommand{\nxexpr}{ \frac{1}{\sqrt{2}} \pz - \frac{1}{\sqrt{2}} \nz}
+\newcommand{\pyexpr}{ \frac{1}{\sqrt{2}} \pz + \frac{i}{\sqrt{2}} \nz}
+\newcommand{\nyexpr}{ \frac{1}{\sqrt{2}} \pz - \frac{i}{\sqrt{2}} \nz}
+\maketitle
+
+1.1 Representations of Spin Half\\
+
+(a) Write $\hat{S}_z$ in the $S_x$ basis, both in Dirac Notation and as a matrix. Hint: However you do this, you will need to know how $\hat{S}_z$ acts on the eignstates of $S_x$.\\
+
+%begin solution
+Find $\hat{S}_z$ in the $S_x$ basis: \\
+$$\hat{1}_x \hat{S}_z \hat{1}_x = \left(|+x\rangle\langle +x| + |-x\rangle\langle -x|\right) \hat{S}_z \left(|+x\rangle\langle +x| + |-x\rangle\langle -x|\right)$$\\
+
+Need $\hat{S}_z$ (hint):\\
+
+\begin{align*}
+{\hat{1}_z |\pm x\rangle}  & = |+z\rangle \langle +z|\pm x\rangle + |-z\rangle \langle -z|\pm x\rangle\\
+			   & = \frac{1}{\sqrt{2}} \left(|+z\rangle|\pm |-z\rangle\right)
+\end{align*}
+$$\implies \hat{S}_z |\pm x\rangle = \frac{\hbar}{2\sqrt{2}} \left(\langle+z| \pm \langle-z|\right)$$\\
+
+So, 
+\begin{align*}
+	\hat{1}_x \hat{S}_z \hat{1}_x & = \left(|+x\rangle \langle+x| + |-x\rangle \langle-x|\right) \left(\frac{\hbar}{2} |-x\rangle \langle+x| + \frac{\hbar}{2} |+x\rangle \langle-x|\right)\\
+				      & = \frac{\hbar}{2} \left(|+x\rangle \langle-x| + |-x\rangle \langle+x|\right)
+\end{align*}
+$$\implies \mathbb{S}_z^{(S_x)} = \frac{\hbar}{2} \left(\begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right)$$
+%make copilot completion into somethin that isn't tab (maybe ctrl+space))
+%make yanking work across tmux sessions in hot key w
+
+%force to be on next page
+\pagebreak
+(b) Verify the equations (in the $S_x$ basis),\\
+using your matrix representation for $\hat{S}_z$ in the $S_x$ basis.\\
+$$
+\hat{S}_z|\pm z\rangle=\pm \frac{\hbar}{2}|\pm z\rangle
+$$
+
+\begin{align*}
+	{\mathbb{S}_z^{(S_x)} \vec{v}_{+z}^{(S_x)}} & = \frac{\hbar}{2\sqrt{2}} \left(\begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left(\begin{array}{c} 1 \\ 1 \end{array}\right)\\
+						  & = \frac{\hbar}{2\sqrt{2}} \left(\begin{array}{c} 1 \\ 1 \end{array}\right)\\
+						  & = \frac{\hbar}{2} \left(\begin{array}{c} \frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} \end{array}\right)\\
+						  & = \frac{\hbar}{2}\vec{v}_{+z}^{(S_x)}
+\end{align*}
+
+$$ \hat{1}_x |-z\rangle = |+x\rangle \langle +x|-z\rangle + |-x\rangle \langle-x|-z\rangle$$\\
+where $$\langle+x|-z\rangle = \frac{1}{\sqrt{2}}$$
+and $$\langle-x|-z\rangle = \frac{-1}{\sqrt{2}}$$
+
+\begin{align*}
+	{\implies \mathbb{S}_z^{(S_x)} \vec{v}_{-z}^{(S_x)}} & = \frac{\hbar}{2\sqrt{2}} \left(\begin{array}{cc} 0 & 1 \\ 1 & 0 \end{array}\right) \left(\begin{array}{c} 1 \\ -1 \end{array}\right)\\
+						  & = \frac{\hbar}{2\sqrt{2}} \left(\begin{array}{c} -1 \\ 1 \end{array}\right)\\
+						  & = \frac{-\hbar}{2} \left(\begin{array}{c} \frac{1}{\sqrt{2}} \\ \frac{-1}{\sqrt{2}} \end{array}\right)\\
+						  & = \frac{-\hbar}{2}\vec{v}_{-z}^{(S_x)}
+\end{align*}
+\pagebreak
+
+
+%LEFT OFF FROM HERE
+(c) Write the projection operator $\hat{P}_{+z}$ in the $S_x$ basis, both in Dirac Notation and as a matrix.\\
+
+Find $\hat{P}_{+z}^{(S_x)}$ and $\hat{P}_{+z}$ in the $S_x$ basis: \\
+
+\begin{align*}
+	\hat{P}_{+z}^{(S_x)} & = \hat{1}_x \hat{P}_{+z} \hat{1}_x\\
+			     & = \left(|+x\rangle \langle+x| + |-x\rangle \langle-x|\right) \left(\frac{1}{\sqrt{2}} |+z\rangle \langle+x| + \frac{1}{\sqrt{2}} |+z\rangle \langle-x|\right)\\
+			      & = \frac{1}{2}\left(|+x\rangle\langle +x| + |+x\rangle\langle -x| + |-x\rangle\langle +x| + |-x\rangle\langle -x|\right)
+\end{align*}
+
+\begin{align*}
+    \mathbb{P}_{+z}^{(S_x)} & = \frac{1}{2} \left(\begin{array}{cc} 1 & 1 \\ 1 & 1 \end{array}\right)
+\end{align*}
+
+
+(d) Find eigenvalues and eigenvectors of your matrix representation of $\hat{P}_{+z}$ in the $S_x$ basis, thus verifying that $\hat{P}_{+z}|+z\rangle=|+z\rangle$.\\
+
+Diagnolize $\mathbb{P}_{+z}^{(S_x)}$ and verify $\mathbb{P}_{+z}^{S_x}\vec{v}_{+z}^{S_x}=\vec{v}_{+z}^{S_x}$.\\
+
+\begin{center}
+$ \lambda_1 \lambda_2 = 0$ ; $\lambda_1 + \lambda_2 = 1$\\
+$ \implies \lambda_1 = 1$ and $\lambda_2 = 0$\\
+\end{center}
+
+$$\left(\begin{array}{cc} \frac{1}{2} & \frac{1}{2} \\ \frac{1}{2} & \frac{1}{2}\end{array}\right) \left(\begin{array}{c} a \\ b\end{array}\right) = \left(\begin{array}{c} a \\ b\end{array}\right)$$
+
+
+
+(e) Repeat parts (c) and (d) for $\hat{P}_{-z}$.
+
+%end of question 1 additional luasnips
+%need a luasnip for default generating matrix or vector to fill out each element (i have done it enough to know how now)
+%adjust the p and s hat to be pha expands to phat i fill out the subscript and superscript of
+%same for psq p squiggle and other common matrix notations
+%make the copilot tab complete into ctrl-space
+%how to use autocomplete luasnips inside of fractions with out breaking my chain of tabbing into the next section?
+
+
+
+
+
+\end{document}
