@@ -8,8 +8,8 @@ His [third blog post this note taking setup](https://castel.dev/post/lecture-not
 
 (currently not using gilles style; see explicit repos at root)
 ```
-ROOT
-├── junior-semester
+ROOT (currently: junior-semester)
+├── quantum-mechanics
 │   ├── info.yaml
 │   ├── master.tex
 │   ├── hw1.tex
