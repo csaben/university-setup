@@ -1,0 +1,69 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Theorem 3.61a}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+%prove with contradiction
+ 
+\begin{theorem}{3.61 a}
+	Let $A,B,C$ and $D$ be sets. Prove if true or provide counterexample if false. $(A \cap B) \times(C \cap D)=(A \times C) \cap(B \times D)$
+\end{theorem}
+ 
+\begin{proof}
+	First we will prove $\left(A \cap B\right) \times\left(C \cap D\right) \subseteq \left(A \times C\right) \cap\left(B \times D\right)$.
+	Let $\left(x,y \right) \in \left(A \cap B\right) \times\left(C \cap D\right)$.
+	Then $x \in A \cap B$ and $y \in C \cap D$. Hence, $x \in A$ and $x \in B$ and $y \in C$ and $y \in D$. Therefore, $\left(x,y \right) \in \left(A \times C\right) \cap\left(B \times D\right)$.
+	This proves $\left(A \cap B\right) \times\left(C \cap D\right) \subseteq \left(A \times C\right) \cap\left(B \times D\right)$.\\
+
+	\par
+
+	Next we will show that $\left(A \times C\right) \cap\left(B \times D\right) \subseteq \left(A \cap B\right) \times\left(C \cap D\right)$.
+	Let $\left(x,y \right) \in \left(A \times C\right) \cap\left(B \times D\right)$.
+	Then $\left(x,y \right) \in \left(A \times C\right)$ and $\left(x,y \right) \in \left(B \times D\right)$. Hence, $x \in A$ and $y \in C$ and $x \in B$ and $y \in D$. Therefore, $x \in A \cap B$ and $y \in C \cap D$. Then finally, $\left(x,y \right) \in \left(A \cap B\right) \times\left(C \cap D\right)$.
+	This proves $\left(A \times C\right) \cap\left(B \times D\right) \subseteq \left(A \cap B\right) \times\left(C \cap D\right)$.\\
+
+\end{proof}
+
+    
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
