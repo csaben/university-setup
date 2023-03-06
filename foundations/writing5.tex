@@ -42,22 +42,25 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	Suppose that $A, B$ and $C$ are sets. If $A \subseteq B$ and $B \subseteq C$ then $A \subseteq C$.
 \end{theorem}
 \begin{proof}
-	Let $A, B,$ and $C$ be sets. Let $x \in A$. Then $x \in B$ and $x \in C$. Therefore 
-	if $\left(A \subseteq B \right) \cap  \left(B \subseteq C \right)$ then $A \subseteq C$.
+	Let $A, B,$ and $C$ be sets. Let $x \in A$. Since $A \subseteq B$ and $x \in A$, $x \in B$. Similarly,
+	$B \subseteq C$ so $x \in C$. Therefore if $\left(A \subseteq B \right) \cap  \left(B \subseteq C \right)$ then $A \subseteq C$.
 \end{proof}
 
 %horizontal line
 \hrule
+
 \begin{theorem}{3.21b}
 	If $A$ and $B$ are sets, then $\left(A \cap B \right)^{c} = A^{c} \cup B^{c}$.
 \end{theorem}
 \begin{proof}
-	Let $A$ and $B$ be sets.  By definition 3.14, $\left(A \cap B \right)^{c} = \left\{ x \in A \cup B : x \notin A \cap B \right\}$.
-	Hence, $\left(A \cap B \right)^{c} = \left\{ x \in A \cup B : x \notin A \right\} \cup \left\{ x \in A \cup B : x \notin B \right\}$. Therefore,
-	if $x \in \left(A \cap B \right)^{c}$ then $x \in A^{c} \cup B^{c}$.
-
-
+	Let $A$ and $B$ be sets. To show  $\left(A \cap B \right)^{c} = A^{c} \cup B^{c}$,
+	we must show that $\left(A \cap B \right)^{c} \subseteq A^{c} \cup B^{c}$ and $A^{c} \cup B^{c} \subseteq \left(A \cap B \right)^{c}$.
+	Firstly,  Let $x \in (A \cap B)^c$. It follows that $x \in A^c \cup B^c$ by definition 3.14.
+	Secondly, let $x \in A^c \cup B^c$. It follows that $x \in (A \cap B)^c$ by definition 3.14.
 \end{proof}
+
+\boxed{clearly my 3.21 edits are lacking a connection between "firstly" and "it follows" so
+ask jeb after class}
 
     
 
