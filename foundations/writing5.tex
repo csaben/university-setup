@@ -55,12 +55,14 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{proof}
 	Let $A$ and $B$ be sets. To show  $\left(A \cap B \right)^{c} = A^{c} \cup B^{c}$,
 	we must show that $\left(A \cap B \right)^{c} \subseteq A^{c} \cup B^{c}$ and $A^{c} \cup B^{c} \subseteq \left(A \cap B \right)^{c}$.
-	Firstly,  Let $x \in (A \cap B)^c$. It follows that $x \in A^c \cup B^c$ by definition 3.14.
-	Secondly, let $x \in A^c \cup B^c$. It follows that $x \in (A \cap B)^c$ by definition 3.14.
+	Firstly, let $x \in (A \cap B)^c$, then  $x \notin A$ and $x \notin B$. Therefore, by 
+	De-Morgan's law, $x \notin \left(A \cup B \right)$. If $x$ is not a  member of 
+	$A$ or $B$ by definition 3.14 it follows that $x \in A^c \cup B^c$.
+	Secondly, let $x \in A^c \cup B^c$. Therefore, $x \notin\left( A \cup B \right)$. By 
+	De-Morgan's law, it follows that $x \notin (A \cap B)$. Hence, by definition 3.14,
+	$x \in \left( A \cap B \right)^c$. Therefore, $\left(A \cap B \right)^{c} = A^{c} \cup B^{c}$.
 \end{proof}
 
-\boxed{clearly my 3.21 edits are lacking a connection between "firstly" and "it follows" so
-ask jeb after class}
 
     
 
