@@ -1,0 +1,136 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Foundations Midterm}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+%prove with contradiction
+ 
+\begin{theorem}{1}
+	Assume $a,b \in \mathbb{Z}$. If $a^2 \left(b^2 -2b \right)$ is odd, then $a$ and $b$ 
+	is odd.
+\end{theorem}
+\begin{proof}
+	Let $a$ and $b$ be odd and $a^2 \left(b^2 -2b \right)$ be odd. By definition 2.1
+	if $a$ and $b$ are even then it can be shown,
+	\begin{align*}
+		{a^2 \left(b^2 -2b \right)} &= 2k^2 [\left(2j\right)^2 -2 \left(2j \right)^2] \\
+					    &= \left(4k^2\right)[4j^2 - 4j]\\
+					    &= 2  \left(2k^2\right) \left(2j^2 - 2j \right) \\
+	\end{align*}
+	This is a  false statement. Therefore if $a^2 \left(b^2 -2b \right)$ is odd then $a$ and $b$ must also
+	be odd.
+\end{proof}
+
+%horizontal line
+\hrule
+
+\begin{theorem}{2}
+	Given an integer $a$, if $7|4a$ then $7|a$.
+\end{theorem}
+\begin{proof}
+	Let a be an integer and $7|4a$. By definition 2.1, since $7\nmid4$ then 7 must
+	divide $a$ for $7|4a$ to be true. 
+\end{proof}
+
+%horizontal line
+\hrule
+
+\begin{theorem}{3}
+	If $n\in \mathbb{Z}$, then $5n^2 + 3n +7$ is odd.
+\end{theorem}
+\begin{proof}
+	Let $n \in \mathbb{Z}$ and $5n^2 + 3n +7$ is odd. It can then be shown that,\\
+	\begin{align}
+		{5n^2 + 3n + 7 }&= 2k \text{ for some integer k}\\
+		\frac{5n^2}{2} + \frac{3n}{2} + \frac{7}{2}&= k\\
+	\end{align}
+
+	This is false statement because $\frac{7}{2}$ doesn't allow 
+	$\frac{5n^2}{2} + \frac{3n}{2} + \frac{7}{2}$ to be an integer
+	for any $n$. Therefore if $n \in \mathbb{Z}$ then $5n^2 + 3n +7$ is odd.
+\end{proof}
+
+\pagebreak
+
+\begin{theorem}{5}
+	Assume $a \in \mathbb{Z}$. Then $a^2 \mid a$ if and only if $a \in\{-1,0,1\}$
+	%we will use proof by cases
+\end{theorem}
+\begin{proof}
+	Let $a \in \mathbb{Z}$. Using proof by cases we will show that $a^2 \mid a$ if and only if $a \in\{-1,0,1\}$.
+	Firstly, 
+\end{proof}
+\begin{theorem}{6}
+If $A, B, C, D$ are sets and $C \subseteq A$ and $D \subseteq B$, then $D \backslash A \subseteq B \backslash C$.
+\end{theorem}
+\begin{theorem}{7}
+If we define the sets $A=\{12 a+4 b: a, b \in \mathbb{Z}\}$ and $B=\{4 c: c \in \mathbb{Z}\}$, then $A \subseteq B$.
+\end{theorem}
+
+\pagebreak
+
+\begin{theorem}{8}
+Theorem 8. Given integers $a, b$, and $c$, if $a^2 \mid b$ and $b^3 \mid c$, then $a^6 \mid c$.
+\end{theorem}
+\begin{proof}:\\
+8. Let $a, b, c \in \mathbb{Z}$\\
+3. such that $a^2 \mid b$ and $b^3 \mid c$.\\
+11. By the definition of divisibility, this implies that there exists integers $k$ and $\ell$ such that,\\
+6. $b=a^2 k$ and $c=b^3 \ell$.\\
+10. Now, substituting $b^3$, we see that,\\
+2.
+$$
+\begin{aligned}
+c & =b^3 \ell \\
+& =a^6 k^3 \ell \\
+& =a^6 \mathrm{~m},
+\end{aligned}
+$$
+5. where $m=k^3 \ell$ is an integer.\\
+1. Cubing both sides of $b=a^2 k$ we obtain,\\
+4. $b^3=a^6 k^3$.\\
+7. Hence $c=a^6 m$,\\
+9. and $a^6 \mid c$ by the definition of divisibility.\\
+    
+\end{proof}
+
+%horizontal line
+\hrule
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
