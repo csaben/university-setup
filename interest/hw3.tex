@@ -1,0 +1,139 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{actuarialsymbol}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Theory of Interest Homework}%replace X with the appropriate number
+\author{Steven, Emma, Clark\\ %replace with your name
+}% 3/6/23 lecture} %if necessary, replace with your course title
+% \title{}%replace X with the appropriate number
+%sample envs
+% \begin{theorem}[Theorem 1.1]
+% \begin{lemma}[Lemma 1.1]
+% \begin{exercise}[Exercise 1.1]
+% \begin{problem}[Problem 1.1]
+% \begin{question}[Question 1.1]
+% \begin{corollary}[Corollary 1.1]
+\maketitle
+
+\begin{question}[Question 2.2.7]
+	a Find the monthly payments for a 30 year fixed loan of 200,000
+	with an APR of 4.5\% compounded monthly + payments made at the end
+	of each month.\\
+
+	Recall, as a FV problem we can state this as follows,\\
+	\begin{align*}
+		xS_{\actuarialangle{n}i} &= 200,000 \left(1+i \right)^{360}\\
+	\end{align*}
+	Note also, that our discount factor in this scenario is,\\
+	\begin{align*}
+		v &= \frac{1}{1+\frac{i}{12}}\\
+		v_{0.045} &= \frac{1}{1+\frac{.045}{12}}\\
+		v_{0.045} &= 0.9962\\
+	\end{align*}
+	Keeping all this in mind to find the monthly payments  given that we known 30 years
+	is 360 months, we can use the following equivalent PV method,\\
+	\begin{align*}
+		xv \left(\frac{1-v^{360}}{1-v}\right) &= 200,000\\
+		x \left(0.9962 \right)(\frac{1-.9962^{360}}{1-.9962})&= 200,000\\
+		x \left(197.361\right) &= 200,000\\
+		x &= 1013.371\\
+	\end{align*}
+
+\hline
+\pagebreak
+
+\begin{question}[Question 2.2.11]
+	a In the preceeding example, determine the amount of each monthly payment
+	if no payment is made for the first 12 months.\\
+\end{question}
+
+Consider a new period of 360 months - 12 months and let's use our same method from the previous question,\\
+	\begin{align*}
+	{xv \left(\frac{1-v^{348}}{1-v}\right)} &= 200,000\\
+	x \left(0.99626 \right)(\frac{1-.99626^{348}}{1-.99626})&= 200,000\\
+	x \left(194.177\right) &= 200,000\\
+	x &= 1029.986\\
+	\end{align*}
+    
+\hline
+
+\begin{question}[Problem 2.2.13] 
+a Jim can make an investment of 10,000 in 2 ways:\\  
+\begin{enumerate}  
+\item Deposits into an account yielding an annual interest rate of $i$.
+\item He can purchase an annuity immediate (payments occur at end of month) with
+24 level payments (the amounts don't change) annually, at an
+annual rate of 10\%. These payments are then deposited into
+a fund that yields an annual effective rate of 5\%.   
+\end{enumerate}
+If both options produce the same accumulated value at the end of 24 years
+what is the value of $i$? 
+\end{question}
+
+We will determine the respective accumulated values and equate them to find $i$.\\
+
+Accumlated value of option 1:\\
+\begin{align*}
+	10,000 \left(1+i \right)^{24} 
+\end{align*}
+
+First, let $x$ be the level payment, then $10,000 = xa_{\actuarialangle{24}.1}$, therefore,\\
+\begin{align*}
+	x &= \frac{10,000}{a_{\actuarialangle{24}.1}}\\
+	x &= \frac{10,000}{\frac{1-v^{24}}{.1}} \text{ where i = 0.1}\\
+	x &= \frac{10,000}{\frac{1-.1.015}{.1}}\\
+	x &= 1,112.9978\\
+\end{align*}
+
+Finally, Accumlated value of option 2:\\
+\begin{align*}
+	xS_{\actuarialangle{24}.05}
+\end{align*}
+
+Consequently,\\
+
+$$
+\begin{align*}
+    xS_{\actuarialangle{24}.05} &= 10,000 \left(1 + i \right)^{24}\\
+    x \left( \frac{(1+i^n)-1}{i} \right) &= 10,000 \left(1 + i \right)^{24}\\
+    x \left( \frac{(1+.05^{24})-1}{.05} \right) &= 10,000 \left(1 + i \right)^{24}\\
+    1112.9978 \left(44.502 \right)&= 10,000 \left(1 + i \right)^{24}\\
+    49530.62524 &= 10,000 \left(1 + i \right)^{24}\\
+    \left(4.9530.62524 \right)^{\frac{1}{24}} &= 1 + i\\
+    i &= 6.89\%\\
+\end{align*}
+$$
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

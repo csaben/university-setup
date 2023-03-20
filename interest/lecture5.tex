@@ -1,0 +1,149 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+\usepackage{actuarialsymbol}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Lecture 5}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+TOI} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{Todos}
+
+\begin{itemize}
+	\item QUIZ Celebration of learning posted next weds DUE Tuesday 3/28 9am
+	\item get these notes into Charlie Cruz's notation (or someone not me lol)
+	\item HW5 due sometime after C2
+\end{itemize}
+
+%ideally working from a master.tex that shows previous days would be nice
+\section{2.4.2 e.g. == HW5 q1}
+Jeff deposits 100 at the end of each year for 13 years into a fund X. 
+Jen deposits 100 at the end of each year for 13 years into a fund Y. 
+Fund X earns an annual effective rate of 15\% for the first five years and 
+annual ERI of 6\% for the remaining eight years. Fund Y earns an annual 
+effective rate $i$. Both funds have the same accumulated value at the end of 13
+years. What is the value of $i$?
+
+$$
+\left(100S_{\actuarialangle{5}.15}\right)\left(1+0.06\right)^8 + \left(100S_{\actuarialangle{8}.06}\right)= 100S_{\actuarialangle{13}.i}
+$$
+
+$$
+i=?
+$$
+
+Remark: So far, our discussion has considered annuities for which frequency and interest conversion periods
+are the same. In general, this may not be the case.
+
+\section{2.4.3  e.g. == HW5 q2}
+\begin{itemize}
+	\item An annuity immediate has ten monthly payments of 1, and the quoted interest rate $i^{(4)}=8\%$. Determine its PV and its FV\\
+	\item If the quoted rate is an annual effective rate of 6\%, find the PV and the fV of the annuity.
+\end{itemize}
+
+\pagebreak
+
+\section{2.5: Increasing and Decreasing Annuities} 
+\subsection{2.5.1: Increasing Annuities}
+Consider an annuity in which successive payments follow an arithmetic progression, 
+namely: 1, 2, 3, 4, 5, 6, 7, 8, 9, n.\\
+
+Let the PV of this annuity be $X$. That is,
+%number line
+$$
+X = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + n
+$$
+
+$PV$ == Present Value
+$$
+PV = \left(IA \right)_{\actuarialangle{n}} = v + 2v^2 + \cdots + nv^n
+$$
+
+Since $PV = X$, we have:
+
+Eq1 (how to tack this to the side of the eqn and reference it later in tex?)
+$$
+X = v + 2v^2 + \cdots + nv^n = X
+$$ 
+
+Eq2
+$$
+1 + 2v + 3v^2 + \cdots + nv^{n-1} = \frac{X}{v} = X \left(1+i\right)
+$$
+
+$$
+\text{Eq1 - Eq2} \implies \left(1+i \right)X-X = 1 + v + v^2 + \cdots + v^{n-1} - nv^n
+$$
+
+That is,
+$$
+iX = 1 + v + 2v^2 + \cdots + v^{n-1} - nv^n
+$$
+
+recall;
+$$
+a^{..}_{\actuarialangle{n}i} =  1 + v + 2v^2 + \cdots + v^{n-1}
+$$
+
+$$
+iX \implies a^{..}_{\actuarialangle{n}i} - nv^n
+$$
+
+Therefore,
+$$ 
+X = \frac{a^{..}_{\actuarialangle{n}}- nv^n}{i}
+$$
+
+i.e.
+$$
+PV =  \left(IA \right)_{\actuarialangle{n}} = \frac{a^{..}_{\actuarialangle{n}}- nv^n}{i}
+$$
+
+Similarly (proof is left as an exercise to the reader),
+$$
+FV = \left(IS \right)_{\actuarialangle{n}} = \frac{s^{..}_{\actuarialangle{n}}- nv^n}{i}
+$$
+
+%underline
+Consequently, the PV of an increasing perpetuity is given by,
+$$
+IA_{\actuarialangle{\infty}} = \frac{1}{id} = \left(\frac{1}{i} \right) \left(\frac{1+i}{i}\right) = \frac{1}{i^2} + \frac{1}{i}
+$$
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
