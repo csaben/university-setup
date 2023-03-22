@@ -1,0 +1,162 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+\usepackage{actuarialsymbol}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Lecture 6}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+TOI} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{Todos}
+
+\begin{itemize}
+	\item QUIZ Celebration of learning posted next weds DUE Tuesday 3/28 9am
+	\item HW5 due sometime after C2
+	\item get these notes into Charlie Cruz's notation (or someone not me lol)
+\end{itemize}
+
+%ideally working from a master.tex that shows previous days would be nice
+\section{}
+Remark: For an increasing annuity,\\
+$$
+PV = \left(Ia_{\actuarialangle{n}}\right) = \frac{a^{..}_{\actuarialangle{n} -nv^n}}{i}
+$$
+$$
+FV = \left(IS_{\actuarialangle{n}}\right) = \frac{n - a_{\actuarialangle{n}}}{i}
+$$
+
+for a Decreasing  annuity,\\
+$$
+PV = \left(Da_{\actuarialangle{n}}\right) = \frac{n(i+1)^n - S_{\actuarialangle{n}}}{i}
+$$
+$$
+FV = \left(DS_{\actuarialangle{n}}\right) = \frac{S^{..}_{\actuarialangle{n} -nv^n}}{i}
+$$
+
+\section{2.5.2 Example == HW prob 3 of PSET 5:}
+A five year annuity has increasing monthly payment at the end of each month. The first payment
+us 600, and each subsequent payment is 10 learger than the previous payment. At a rate of
+$0.5\%$ per month, find the PV of the annuity valued one month before the final payment.
+
+Soln: There are at least two ways of approaching this problem. \\
+
+\begin{enumerate}
+	\item We can think of the 5 year annuity as a level annuity of [BLANK] per month,
+		and an increasing annuity annuity with additional payments of 10.
+		$$
+		PV = 600a_{\actuarialangle{60}i} + 10 \left(Ia_{\actuarialangle{59}i}\right)v
+		$$
+		$$
+		PV = 590a_{\actuarialangle{60}i} + 10 \left(Ia_{\actuarialangle{60}i}\right)
+		$$
+	\item We can consider the annuity as a combination of level payments of 1200, and 
+		decreasing payments starting with [BLANK=600] and going down by [BLANK=10] each month.\\
+		In this case, \\
+		$$
+		PV = 1200a_{\actuarialangle{60}i} - 10 \left(Da_{\actuarialangle{60}i}\right)
+		$$
+
+
+\end{enumerate}
+
+\section{2.5.3 Example == HW Problem 4 and last of PSET 5:}
+Jeff bought an increasing perpetuity-due (annuity due means its due at beginning of month
+immediate is at the end of the month) with annual payments starting at 5 and increasing by 5 
+each year until the payment amount reaches 100. Thereafter, the payments then remain
+at 100. If the annual effective rate is $7.5\%$, what is the PV of this perpetuity?
+
+notes: 
+\begin{itemize}
+	\item  $Ia_{\infty}$ will be used (but at the period when this happens you need to discount it)
+		$$
+		Ia_{\actuarialangle{\infty}}v^{x}
+		$$
+	\item  our previous prob is almost same (different periods an such)
+\end{itemize}
+
+\section{Chapter 3: Loan Repayment}
+note: excel sheets can handle a lot of this
+\subsection{3.1: Amortization:}
+see green book for numberline
+\subsection{3.1.1 Definition:}
+A loan L is amortized at interest $i$ if the loan amount is equal to the PV of all the 
+loan payments. $K_1, K_2, \dots, K_n$. In other words (IOW),\\
+$$
+L = K_1v + K_2v^2 + \dots + K_nv^n
+$$
+The outstanding balance of the loan at time t, denoted $OB_t$, is simply the sum
+of the unpaid principal and interest at time $t$. IOW $OB_t$ is simply the
+PV of the remaining payments.\\
+For example, $OB_0 = L$. and $OB_n = 0$
+%align env makes sense here
+$$
+OB_1 = L(1+i) - K_1 \text{ (you have to accumulate the interest since t=0)}\\
+$$
+$$
+OB_2 = L(1+i)^2 - K_1 - K_2 = OB_1(1+i) - K_2 = [L(1+i) - K_1](1+i) - K_2)]
+$$
+$$
+OB_2 = L(1+i)^2 - K_1(1+i) - K_2
+$$
+$$
+OB_3 = L(1+i)^3 - K_1(1+i)^2 - K_2(1+i) - K_3
+$$
+In general, 
+$$
+OB_t = L(1+i)^t - \sum_{j=1}^{t}K_j(1+i)^{t-j}
+$$
+Or,
+$$
+OB_t = L(1+i)^t - K_1(1+i)^{t-1} - K_2(1+i)^{t-2} - \dots - K_{t-1}(1+i)^1 - K_{t-0}
+$$
+This is known as the retrospective view of $OB_t$.\\
+On the other hand, $OB_t$ can also be viewed in terms of the remaining loan
+repayments that is,
+$$
+OB_t = \text{PV of all remaining payments}
+$$
+$$
+OB_t = K_t + K_{t+1}v + K_{t+2}v^2 + \dots + K_n v^{n-t}
+$$
+This is called the prospective view of $OB_t$.\\
+
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
