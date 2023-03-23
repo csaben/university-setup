@@ -48,9 +48,9 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	\begin{align*}
 		{a^2 \left(b^2 -2b \right)} &= 2k^2 [\left(2j\right)^2 -2 \left(2j \right)^2] \\
 					    &= \left(4k^2\right)[4j^2 - 4j]\\
-					    &= 2  \left(2k^2\right) \left(2j^2 - 2j \right) \\
+					    &= 2  \left(2k^2\right) \left(2j^2 - 2j \right), \\
 	\end{align*}
-	This is a  false statement. Therefore if $a^2 \left(b^2 -2b \right)$ is odd then $a$ and $b$ must also
+	which is an even number. This is a  false statement. Therefore if $a^2 \left(b^2 -2b \right)$ is odd then $a$ and $b$ must also
 	be odd.
 \end{proof}
 
@@ -62,7 +62,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \end{theorem}
 \begin{proof}
 	Let a be an integer and $7|4a$. By definition 2.1, since $7\nmid4$ then 7 must
-	divide $a$ for $7|4a$ to be true. 
+	divide $a$ for $7|4a$ to be true. Therefore, if $7|4a$ then $7|a$.
 \end{proof}
 
 %horizontal line
@@ -80,7 +80,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 
 	This is false statement because $\frac{7}{2}$ doesn't allow 
 	$\frac{5n^2}{2} + \frac{3n}{2} + \frac{7}{2}$ to be an integer
-	for any $n$. Therefore if $n \in \mathbb{Z}$ then $5n^2 + 3n +7$ is odd.
+	for any $n$. Therefore, if $n \in \mathbb{Z}$ then $5n^2 + 3n +7$ is odd.
 \end{proof}
 
 \pagebreak
@@ -90,15 +90,50 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	%we will use proof by cases
 \end{theorem}
 \begin{proof}
-	Let $a \in \mathbb{Z}$. Using proof by cases we will show that $a^2 \mid a$ if and only if $a \in\{-1,0,1\}$.
-	Firstly, 
+	Let $a \in \mathbb{Z}$. Using proof by cases we will show that $a^2 \mid a$ if and only if $a \in\{-1,0,1\}$.\\
+
+	Firstly, we will show if $a^2 \mid a$ then $a \in\{-1,0,1\}$. Consider the case $a$ is non-zero and greater than 1. 
+	Then $a^2 \mid a$ implies $\frac{a}{a^2} \in \mathbb{Z}$ which is false. Similarly, when $a$ is non-zero and less than -1, 
+	then $a^2 \mid a$ implies $\frac{a}{a^2} \in \mathbb{Z}$ which is false. Hence, $a$ must be either -1, 0, or 1 for $a^2 \mid a$ to be true.\\
+
+	Secondly, we will show if $a \in\{-1,0,1\}$ then $a^2 \mid a$. We can prove this is true for each element directly by using the definition of divisibility for
+	some integer k,
+	%show three equations that are true, -1^2 =1k, 0^2 = 0k, 1^2 = 1k
+	\begin{align*}
+		\text{Case 1: } a &= -1\\
+		{-1}^2 = 1k \\
+		\text{Case 2: } a &= 0\\
+		{0}^2 = 0k\\
+		\text{Case 3: } a &= 1\\
+		{1}^2 = 1k\\
+	\end{align*}
+	All three cases are true, therefore $a^2 \mid a$ if and only if $a \in\{-1,0,1\}$.
+
 \end{proof}
 \begin{theorem}{6}
 If $A, B, C, D$ are sets and $C \subseteq A$ and $D \subseteq B$, then $D \backslash A \subseteq B \backslash C$.
 \end{theorem}
+\begin{proof}
+Let $A, B, C, D$ be sets and $C \subseteq A$ and $D \subseteq B$. 
+Let $x \in D \backslash A$. Then $x \in D$ and by definition 3.5, $x \in B$. Furthermore, because
+$C \subseteq A$ it follows that $x \in B \backslash C$. Therefore $D \backslash A \subseteq B \backslash C$.
+
+% By definition 3.5
 \begin{theorem}{7}
 If we define the sets $A=\{12 a+4 b: a, b \in \mathbb{Z}\}$ and $B=\{4 c: c \in \mathbb{Z}\}$, then $A \subseteq B$.
 \end{theorem}
+\begin{proof}
+Let $A=\{12 a+4 b: a, b \in \mathbb{Z}\}$ and $B=\{4 c: c \in \mathbb{Z}\}$. Let $x \in A$ such that
+$x=12 a+4 b$. It can be shown that,
+\begin{align*}
+x & = 12 a+4 b\\
+& = 4 (3 a+ b)\\
+& = 4 k \text{ for some integer k}\\
+\end{align*}
+Hence, $4 k \in B$. Therefore, if $A=\{12 a+4 b: a, b \in \mathbb{Z}\}$ and $B=\{4 c: c \in \mathbb{Z}\}$, then $A \subseteq B$.
+
+	
+\end{proof}
 
 \pagebreak
 

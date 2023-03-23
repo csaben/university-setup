@@ -1,0 +1,132 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{actuarialsymbol}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Theory of Interest}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+}% 3/6/23 lecture} %if necessary, replace with your course title
+% \title{}%replace X with the appropriate number
+%sample envs
+% \begin{theorem}[Theorem 1.1]
+% \begin{lemma}[Lemma 1.1]
+% \begin{exercise}[Exercise 1.1]
+% \begin{problem}[Problem 1.1]
+% \begin{question}[Question 1.1]
+% \begin{corollary}[Corollary 1.1]
+\maketitle
+
+\begin{section}{3/8/23 Lecture}
+
+%iitemize
+Homework and Logistics
+\hline 
+\begin{itemize}
+	\item 3:30pm talk  (student engagement)
+	\item PS3: 2.2.7, 2.2.11, 2.2.13 (first two on last lecture notes, 3rd on today), 
+		Due: 6pm on Tuesday 3/14 with an extra problem given on monday. In total,
+		4 problems.
+\end{itemize}
+\hline
+
+Remark:\\
+
+In general, \\
+$ S_{\actuarialangle{n}
+$ a_{\actuarialangle{n}}:=$ is the present value of "    ".\\
+Thus,\\
+$v^{k}a_{\actuarialangle{n}}:= a_{\actuarialangle{n+k}} - a_{\actuarialangle{k}}$\\
+
+Imagine a number line with 0 and $k$ and $k+1$	on it.\
+
+Therefore,\\
+$a_{\actuarialangle{n+k}} = a_{\actuarialangle{k}} + v^{k}a_{\actuarialangle{n}}$\\
+
+As we saw in the last lecture,\\
+$S_{\actuarialangle{n+k}} = S_{\actuarialangle{n}}\left(1+i\right)^{k} + S_{\actuarialangle{n}}$.\\
+Here,\\
+$v^{k}a_{\actuarialangle{n}}$ is the PV of a k period deferred annuity immediate.\\
+
+\begin{question}[Example 2.2.13]
+	a Jim can make an investment of 10,000 in 2 ways:\\
+	\begin{enumerate}
+		\item Deposits into an account yielding an annual interest rate of $i$.
+		\item He can purchase an annuity immediate (payments occur at end of month) with
+			24 level payments (the amounts don't change) annually, at an 
+			annual rate of 10\%. These payments are then deposited into
+			a fund that yields an annual effective rate of 5\%. 
+	\end{enumerate}
+	If both options produce the same accumulated value at the end of 24 years
+	what is the value of $i$?
+\end{question}
+
+\boxed{Solution:}\\
+
+
+Option A:\\
+\hline
+
+We will determine the respective accumuluated values. And equate them, to find $i$.\\
+
+Accumulated value of the first option:\\
+$S_{\actuarialangle{24}} = 10,000\left(1+i\right)^{24}$\\
+
+Accumulated value of the second option:\\
+
+Let $X$ be the level payment.\\
+Then, \\
+$10,000 = Xa_{\actuarialangle{24}.1}$\\
+Therefore,\\
+$X = \frac{10,000}{a_{\actuarialangle{24}.1}} = \frac{10000}{\frac{1-v^{24}}{i}}$ \\
+$i=10$ in the actuarial angle\%\\
+What does $X=$??\\
+
+Option B:\\
+\hline
+
+Finally, \\
+The accumulated value of option B$= XS_{\actuarialangle{24}{.05}}$\\
+(How much Jim ends up with when Jim brings in X valued level payments for 24 years.)\\
+Consequently,\\
+$XS_{\actuarialangle{24}{.05}} = 10,000\left(1+i\right)^{24} $\\
+OR $AV(B) =  AV(A)$\\
+
+
+
+%$S_{\actuarialangle{24}} = 10,000\left(1+0.1\right)^{24} + 10,000\left(1+0.05\right)^{24}$\\
+
+
+\end{section}
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

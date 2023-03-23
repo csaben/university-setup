@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1678749288 "lecture2.tex" "lecture2.pdf" "lecture2" 1678749307
+["pdflatex"] 1678796475 "hw_current.tex" "hw_current.pdf" "hw_current" 1678796475
   "/etc/texmf/web2c/texmf.cnf" 1675282064 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty" 1573336935 6902 30fdaf7dc5636b8e3afa306210c45cae ""
@@ -20,8 +20,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1675282122 4791331 007277c712889c7bba70acf70616c8ba ""
   "actuarialsymbol.sty" 0 -1 0 ""
-  "lecture2.aux" 1678742272 108 4d75fe5057325977b5a7a3cda40a400e ""
-  "lecture2.tex" 1678742272 4526 ae61ba3d46e8395c7e28a26dc671a849 ""
+  "hw_current.aux" 1678796473 8 a94a2480d3289e625eea47cd1b285758 ""
+  "hw_current.tex" 1678796459 5676 e51b836e07454d6e28b1b32591cef674 ""
   (generated)
-  "lecture2.pdf"
-  "lecture2.log"
+  "hw_current.pdf"
+  "hw_current.log"
