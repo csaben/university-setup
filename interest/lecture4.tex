@@ -1,0 +1,117 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+\usepackage{actuarialsymbol}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Lecture 4}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+TOI} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{Todos}
+
+\begin{itemize}
+	\item (tentative) Celebration of learning posted next weds due Tuesday 3/28 9am
+	\item hw4 p1 and p2 due Sunday
+\end{itemize}
+
+%ideally working from a master.tex that shows previous days would be nice
+\section{hw4 problem 1}
+solution in green notebook
+
+\section{2.4 Annuity Due \& Annuity-Immediate}
+So far, our focus has been on annuities for which payments occur at the end of the perod, 
+i.e. annuity-immediate. When payments are made at the start of each period, we speak 
+of an annuity-due. In this section, we look at the PV and FV of an annuity due. For an 
+annuity-immediate, \\
+the PV is,\\
+\begin{align*}
+$$a_{\actuarialangle{n}} = \frac{1-v^n}{i}$$\\
+\end{align*}
+and the FV is,\\
+\begin{align*}
+$$S_{\actuarialangle{n}} = \frac{(1+i)^n-1}{i}$$\\
+\end{align*}
+
+Now, let us consider the situation for an annuity due: that is successive payments
+of 1 are made at the beginning of each period for n periods.\\
+
+The accumulated value of the series of payments is, GREENBOOK\\
+%how to do the double dots on top of a symbol? all in page 2 of green notebook
+
+Now, lets turn our atention to the PV of an annuity due.\\
+	$$
+	a^{..}_{\actuarialangle{n}i} = 1+v+\cdots+v^{n-1}=\\
+	a^{..}_{\actuarialangle{n}i} = \frac{1-v^n}{1-v}=\\
+	\boxed{a^{..}_{\actuarialangle{n}i} = \frac{1-v^n}{d}}\\
+	$$
+
+Remark (CN):\\
+$$
+a^{..}_{\actuarialangle{n}i} = a_{\actuarialangle{n}}(1+i)\\
+$$
+$$
+S^{..}_{\actuarialangle{n}i} = S_{\actuarialangle{n}}(1+i)\\
+$$
+$$
+%infinity symbol
+a^{..}_{\actuarialangle{n->\infty}i} = \frac{1}{d} = a_{\actuarialangle{n->\infty}}(1+i)+a_{\actuarialangle{n->\infty}
+}+1\\
+$$
+\section{2.4.1: e.g. (hw4 no.2)} 
+%underline
+Jim began saving for his retirement by making monthly deposits of 200 into a fund earning 6\%
+and missed deposits 60-72. He then continued to make monthly deposits of 200 until December 21,
+2009. How much did Jim accumulate in his account including interest on December 21, 2009?\\
+
+option 1:\\
+Accumulated value of 59 payments + Remaining $\lambda$ payments \\
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

@@ -1,0 +1,84 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Theorem 4.18}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+%prove with contradiction
+ 
+\begin{theorem}{4.18}
+	For all integers $n \geq 3,2 \cdot 3+3 \cdot 4+\cdots+(n-1) \cdot n=\frac{(n-2)\left(n^2+2 n+3\right)}{3}$
+\end{theorem}
+ 
+\begin{proof}
+	Let $n \geq 3$. We will prove that $2 \cdot 3+3 \cdot 4+\cdots+(n-1) \cdot n=\frac{(n-2)\left(n^2+2 n+3\right)}{3}$ by utilizing induction.\\
+
+	Base case: $n=3$\\
+	\begin{align*}
+		{\left(3-1\right)3} &= \frac{\left(3-2 \right) \left(3^2 +2(3)+3\right))}{3}\\
+			6 &= 6
+	\end{align*}
+
+	Next, for some $n=k$ such that $k \in \mathbb{N}$ and $k \geq 3$, we assume that $2 \cdot 3+3 \cdot 4+\cdots+(k-1) \cdot k=\frac{(k-2)\left(k^2+2 k+3\right)}{3}$\\
+	It can be shown that for $n = k+1$ that if we add zero we get the following,
+	\begin{align*}
+		{2 \cdot 3+3 \cdot 4+\cdots+(k-1) \cdot k + \left((k)(k+1) - (k)(k+1) \right)} &= \left(k-2 \right) \frac{\left(k^2+2k+3 \right)}{3}\\
+			2 \cdot 3+3 \cdot 4+\cdots+(k-1) \cdot k + (k)(k+1)              &= (k)(k+1) \left( \left(k-2 \right) \frac{\left(k^2+2k+3 \right)}{3} \right)\\
+											 &= k^2 + k + \frac{k^3-k-6}{3}\\
+											 &= \frac{3k^2 +2k-6}{3}
+	\end{align*}
+
+	We can show by substituting $k+1$ for $k$ in our original equation, that for $k \geq 3,2 \cdot 3+3 \cdot 4+\cdots+(k-1) \cdot k +(k)(k+1) =\frac{(k-2)\left(k^2+2 k+3\right)}{3}$, that 
+	the right hand side can be simplified to match our preceeding equation. This can be shown as follows,
+	\begin{align*}
+		\frac{(k-2)\left(k^2+2 k+3\right)}{3} &= \frac{3k^2 +2k-6}{3}
+	\end{align*}
+
+	Thus, we can conclude that by induction that $2 \cdot 3+3 \cdot 4+\cdots+(n-1) \cdot n=\frac{(n-2)\left(n^2+2 n+3\right)}{3}$.
+
+
+
+\end{proof}
+
+    
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
