@@ -1,0 +1,185 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{actuarialangle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+
+\title{Math 481 Celebration 2}
+
+\author{Clark Saben}
+\date{}
+
+
+\begin{document}
+\maketitle
+Please attempt all questions, and be sure to present your work in a neat, and orderly manner. To receive full credit, you must provide supporting work to justify your answers.
+
+\begin{enumerate}
+  \item [1] An annuity pays 1 at the end of each year for $n$ years. Using an annual effective interest rate of $i$, the accumulated value of the annuity at time $(n+1)$ is 13.776 . It is also known that $(1+i)^{n}=2.476$. Calculate $n$.\\
+
+(A) 4\\
+(B) 5\\
+(C) 6\\
+(D) 7\\
+(E) 8\\
+
+\boxed{\text{(E) 8   work on next page}}\\
+
+\pagebreak
+
+Let's start by listing our known values
+$$
+(1+i)^n = 2.476\\
+$$
+$$
+S_{\actuarialangle{n}} = \frac{(1+i)^n - 1}{i}\\
+$$
+$$
+S_{\actuarialangle{n+1}} = 13.776 \text{ (the future value at n+1)}\\
+$$
+$$
+v = \frac{1}{1+i}\\
+$$
+We can see ahead of time that,
+$$
+n = \frac{ln(2.476)}{ln(1+i)}\\
+$$
+So we will simply solve for $i$ and plug in to our above equation to find n. We can re-write the
+Future Value and subsequently solve for $i$,
+\begin{align*}
+	{S_{\actuarialangle{n+1}} = \frac{i^{n+1}-1}{i}} &= 13.776\\
+	\frac{(1+i)(1+i)^n -1}{i} &= 13.776\\
+	(1+i)(2.476) - 1&= 13.776i\\
+	1.476 +2.476i &= 13.776i\\
+	1.476i &= 11.3\\
+	i &= 0.125\\
+\end{align*}
+Hence, 
+$$
+n = \frac{ln(2.476)}{ln(1.125)} \approx 8\\
+$$
+
+\boxed{\text{(E) 8}}\\
+
+\pagebreak
+
+  \item [2] Happy and financially astute parents decide at the birth of their daugther that they will need to provide 50,000 at each of their daughter's 18th, 19th, 20th, and 21st birthdays to fund her college education. They plan to contribute $X$ at each of their daughter's $1^{\text {st }}$ through 17th birthdays to fund four 50,000 withdrawls. If they anticipate earning a constant $5 \%$ annual effective rate on their contributions, which of the following equations of value can be used to determine X, assuming compound interest?\\
+
+(A) $X\left[v_{.05}^{1}+v_{.05}^{2}+\cdots+v_{.05}^{17}\right]=50,000\left[v_{.05}^{1}+\cdots+v_{.05}^{4}\right]$\\
+(B) $X\left[(1.05)^{16}+(1.05)^{15}+\cdots+1.05^{1}\right]=50,000\left[1+\cdots+v_{.05}^{3}\right]$\\
+(C) $X\left[(1.05)^{17}+(1.05)^{16}+\cdots+1\right]=50,000\left[1+\cdots+v_{.05}^{3}\right]$\\
+(D) $X\left[(1.05)^{17}+(1.05)^{16}+\cdots+(1.05)^{1}\right]=50,000\left[1+\cdots+v_{.05}^{3}\right]$\\
+(E) $X\left[v_{.05}^{1}+v_{.05}^{2}+\ldots v_{.05}^{17}\right]=50,000\left[v_{.05}^{18}+\cdots+v_{.05}^{22}\right]$\\
+
+\boxed{ \text{(D) }X\left[(1.05)^{17}+(1.05)^{16}+\cdots+(1.05)^{1}\right]=50,000\left[1+\cdots+v_{.05}^{3}\right]}\\
+
+Assuming compound interest (at 5\%) we know that level payments of X over the course of 17 years will yield the
+following expression of the accumulated value,
+$$
+X\left[(1.05)^{17}+(1.05)^{16}+\cdots+(1.05)^{1}\right]
+% =50,000\left[1+\cdots+v_{.05}^{3}\right]\\
+$$
+We also know that the parents need to convert this accumulated value into 4 distinct withdrawals
+of 50,000 each in the subsequent 4 years. The value of the 50,000 withdrawals must be equivalent
+to each other at the time they begin spending it for college for our calculation to be consistent.
+So we would discount starting from the years after the first withdrawal and discounting back to said
+withdrawal. So our expression would look like,
+$$
+50,000\left[1+\cdots+v_{.05}^{3}\right]\\
+$$
+Hence, in order to have accumulated the appropriate amount of 50,000 at the time's evaluation the following
+equation can be used to determine $X$,
+$$
+X\left[(1.05)^{17}+(1.05)^{16}+\cdots+(1.05)^{1}\right]=50,000\left[1+\cdots+v_{.05}^{3}\right]
+$$
+which is the answer choice (D).
+
+\pagebreak
+
+
+  \item [3] Which of the following expressions does NOT represent a definition for $a_{\actuarialangle{n}}$?\\
+
+(A) $v^{n}\left[\frac{(1+i)^{n}-1}{i}\right]$\\
+(B) $\frac{1-v^{n}}{i}$\\
+(C) $v+v^{2}+\cdots+v^{n}$\\
+(D) $v\left[\frac{1-v^{n}}{1-v}\right]$\\
+(E) $\frac{s_{\actuarialangle{n}}}{(1+i)^{n-1}}$\\
+
+\boxed{ \text{(E) } \frac{s_{\actuarialangle{n}}}{(1+i)^{n-1}}}\\
+
+This can be demonstrated with algebra and knowing that,
+$$
+a_{\actuarialangle{n}} = v^nS_{\actuarialangle{n}} = \left(\frac{1}{1+i}\right)^nS_{\actuarialangle{n}}\\
+$$
+Since the above is true, it follows that if (E) were to be true that,
+$$
+\frac{s_{\actuarialangle{n}}}{(1+i)^{n-1}} = \left(\frac{1}{1+i}\right)^nS_{\actuarialangle{n}}\\
+$$
+The $S_{\actuarialangle{n}}$ term is the same in both expressions, so we can cancel it out and we are left with,
+$$
+\frac{1}{(1+i)^{n-1}} = \left(\frac{1}{1+i}\right)^n\\
+$$
+It follows that,
+\begin{align*}
+	{\frac{1}{(1+i)^{n-1}}} &= \left(\frac{1}{1+i}\right)^n\\
+	\left(\frac{1+i}{(1+i)^n}\right) &= \left(\frac{1}{1+i}\right)^n\\
+	\left(\frac{1+i}{(1+i)^n}\right) &= \left(\frac{1^n}{(1+i)^n}\right)\\
+	\left(\frac{1+i}{(1+i)^n}\right) &= \left(\frac{1^n}{(1+i)^n}\right) \text{ denominator cancels}\\
+	1+i &= 1\\
+\end{align*}
+Clearly,
+$$1+i \neq 1\\$$
+Hence,
+(E) does not represent a definition for $a_{\actuarialangle{n}}$.
+
+% P.S. future Clark, (A),(B),(C) defined in notes, (D) can be shown to be true by algebra.
+ 
+\pagebreak
+
+  \item [4] An estate provides a perpetuity with payments of $\mathrm{X}$ at the end of each year. Seth, Susan, and Lori share the perpetuity such that Seth receives the payments of $\mathrm{X}$ for the first $n$ years and Susan receives the payments of $\mathrm{X}$ for the next $m$ years, after which Lori receives all the remaining payments of $\mathrm{X}$. Which of the following represents the difference between the present value of Seth's and Susan's payments using a constant rate of interest?\\
+
+(A) $X\left[a_{\actuarialangle{n} }-v^{n} a_{\actuarialangle{m}}\right]$\\
+(B) $X\left[a_{\actuarialangle{n}}^{\ddot{ }}-v^{n} a \ddot{\actuarialangle{m}}\right]$\\
+(C) $X\left[a_{\actuarialangle{n}}-v^{n+1} a_{\actuarialangle{m}]}\right]$\\
+(D) $X\left[a_{\actuarialangle{n} }-v^{n-1} a_{\actuarialangle{m}}\right]$\\
+(E) $X\left[v a_{\actuarialangle{n}}-v^{n+1} a_{\actuarialangle{m}}\right]$\\
+
+\boxed{ \text{(A) } X\left[a_{\actuarialangle{n} }-v^{n} a_{\actuarialangle{m}}\right]}\\
+
+We know that the present value of Seth's payments is,
+$$
+X\left[a_{\actuarialangle{n} }\right]\\
+$$
+However, Susan's payments are not paid out for $n$ years, so we must discount the present value of Susan's payments by $n$ years. We know that the present value of Susan's payments
+would otherwise be,
+$$
+X\left[a_{\actuarialangle{m}}\right]\\
+$$
+if she were to receive the payments immediately. However, she does not receive the payments immediately, so we must discount the present value of Susan's payments by $n$ years. We 
+then know that the present value of Susan's payments is,
+$$
+X\left[v^{n} a_{\actuarialangle{m}}\right]\\
+$$
+Hence, the difference between the present value of Seth's and Susan's payments using a constant rate of interest is,
+$$
+X\left[a_{\actuarialangle{n} }-v^{n} a_{\actuarialangle{m}}\right]\\
+$$
+This way if $n$ and $m$ were to be the same amount of time the difference would be zero.
+
+
+
+
+
+
+% and the present value of Susan's payments is,
+% $$
+% X\left[v^{n} a_{\actuarialangle{m}}\right]\\
+% $$
+
+\end{enumerate}
+
+\end{document}
