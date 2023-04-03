@@ -1,0 +1,112 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+\usepackage{actuarialsymbol}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Lecture 8}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+TOI} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{Todos}
+
+\begin{itemize}
+	\item HW5 (2.4.2, 2.4.3, 2.5.2, 2.5.3) due tomorrow 10am
+	\item HW6 due next tuesday 10am (7 is due next next double check if i need to)
+	\item hw6 q1 is that amortization schedule that I made last time
+	\item get these notes into Charlie Cruz's notation (or someone not me lol)
+	\item tex lect 7 from kevin and the earlier lect from kat
+	\item today's mantra: write math first then tex in dead moments
+\end{itemize}
+
+\section{3.2. Amortized Loans with Level Payments}
+%overwrite default section numbering
+\subsection{3.2.1: Remark}
+$$L = OB_{0}= a_{\actuarialangle{n}i}$$
+Prospective View:
+$$\begin{aligned}
+	OB_t &= a_{\actuarialangle{n-t}i}
+\end{aligned}$$
+Retroactive View:
+$$\begin{aligned}
+	OB_t &= L(1+i)^{t} - S_{\actuarialangle{t}i} \\
+\end{aligned}$$
+From the above, we can observe that,
+$$\begin{aligned}
+	I_t &= a_{n-(t-1)}i = a_{\actuarialangle{n-t}i}i\\
+	I_t &= ia_{n-t+1}\\
+	I_t &= i \left(\frac{1-v^{n-t+1}}{i}\right)\\
+	I_t &= OB_{t-1}i = 1-v^{n-t+1}\\
+\end{aligned}$$
+
+\subsection{3.2.2: Remark:}
+Sometimes we like to know the total interest paid. In particular, 
+$$\begin{aligned}
+	I &= I_1 + I_2 + \cdots + I_n\\
+	  &= OB_0i + OB_1i + \cdots + OB_{n-1}i\\
+	  &= \text{re-write in terms of $a_{\actuarialangle{n}i}$}\\
+	  &= a_{\actuarialangle{n}i}i + a_{\actuarialangle{n-1}i}i + \cdots + a_{\actuarialangle{n-(n-1)}i}i\\
+	  %factor out i
+	  &= (a_{\actuarialangle{n}} + a_{\actuarialangle{n-1}} + \cdots + a_{\actuarialangle{n-(n-1)}})i\\
+	  &= (\frac{1-v^{n}}{i} + \frac{1-v^{n-1}}{i} + \cdots + \frac{1-v^{1}}{i})i\\ 
+	  &= (1-v^n) + (1-v^{n-1}) + \cdots + (1-v^{1})\\
+	  &= n - (v^n + v^{n-1} + \cdots + v^{1})\\
+	  &= n - a_{\actuarialangle{n}}
+\end{aligned}$$
+\subsection{3.2.3: Example hw6 pr2 see GB:}
+Sam borrows $X$ for 10 years at an annual effective rate of 8\%. 
+If he pays the principal and the accumulated interest in one lump
+sum at the end of 10 years, he would pay 468.05 more in interest
+than if he repaid the loan with ten level payments at the end of each year. 
+Calculate $X$.
+
+\subsection{3.2.4: Example hw6 pr3 see GB:}
+A loan L is to be repaid with 40 payments of 100 at the end of each quarter. Interest
+on the loan is charged at a nominal rate $i$, where $0<i<1$, convertible monthly.
+The outstanding principlals immediately after the 8th and 24th payments
+are 2308.15 and 1345.50, respectively. Calculate the amount of interest
+repaid in the 15th payment.
+
+\subsection{3.2.5: Example hw6 pr4 see GB:}
+A loan at a nominal rate of 24\% convertible monthly is to be repaid with equal payments at the
+end of each month for $2n$ months. The nth payment consists of equal amounts of interest and
+principal. Calculate $n$.
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
