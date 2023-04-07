@@ -1,0 +1,135 @@
+% 
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Writing Assignment 7}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+\begin{theorem}{WA 7.1}
+	If $n \in \mathbb{N}$, then $1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{n^2} \leq 2-\frac{1}{n}$. This will be a total of one proof.
+\end{theorem}
+\begin{proof}
+	Let $n \in \mathbb{N}$. To prove this, we will use induction. First, consider the base case when $n = 1$:
+	$$
+	\begin{aligned}
+		\frac{1}{1^2} &\leq 2-\frac{1}{1}\\
+		1 &=1\\
+	\end{aligned}
+	$$
+
+    Now, let's move to the inductive step. Assume that the inequality holds for $k \in \mathbb{N}$:
+    $$
+    \begin{aligned}
+            1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2} &\leq 2-\frac{1}{k}\\
+    \end{aligned}
+    $$
+
+    To prove it for $k+1$, we add $\frac{1}{(k+1)^2}$ to both sides of the inequality:
+    $$
+    \begin{aligned}
+            1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2}+\frac{1}{(k+1)^2} &\leq 2-\frac{1}{k}+\frac{1}{(k+1)^2}\\
+                                                                             &\leq \frac{2(k+1)^2k - (k+1)^2 + k}{k(k+1)^2}\\
+                                                                             &\leq \frac{2k^3+4k^2+2k-k^2-k}{k(k+1)^2}    \text{   (omit -1 in numerator)}\\
+                                                                             &\leq \frac{2k^3+4k^2+2k-k(k+1)}{k(k+1)^2}\\
+                                                                             &\leq \frac{2(k^2+1)^2k}{k(k+1)^2} - \frac{k(k+1)}{k(k+1)^2}\\
+                                                                             &\leq 2 - \frac{1}{k+1}\\
+    \end{aligned}
+    $$
+
+    We can observe that for the $k+1$ case:
+    $$
+    \begin{aligned}
+            1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2}+\frac{1}{(k+1)^2} &\leq 2-\frac{1}{k+1}\\
+    \end{aligned}
+    $$
+
+    Therefore, by induction, we have proven that for any $n \in \mathbb{N}$, the inequality holds:
+    $$
+    \begin{aligned}
+            1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{n^2} &\leq 2-\frac{1}{n}\\
+    \end{aligned}
+    $$
+\end{proof}
+
+ 
+% \begin{proof}
+	% Let $n \in \mathbb{N}$. We proceed by induction,
+	% Next, we proceed to our inductive step. Assume that for $k \in \mathbb{N}$, we have
+	% $$
+	% \begin{aligned}
+		% 1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2} &\leq 2-\frac{1}{k}\\
+	% \end{aligned}
+	% $$
+
+	% By adding $\frac{1}{(n+1)^2}$ to both sides of the inequality, we get
+	% $$
+	% \begin{aligned}
+		% 1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2}+\frac{1}{(k+1)^2} &\leq 2-\frac{1}{k}+\frac{1}{(k+1)^2}\\
+										 % &\leq \frac{2(k+1)^2k - (k+1)^2 + k}{k(k+1)^2}\\
+										 % &\leq \frac{2k^3+4k^2+2k-k^2-k}{k(k+1)^2}    \text{   (drop -1 in numerator)}\\
+										 % &\leq \frac{2k^3+4k^2+2k-k(k+1)}{k(k+1)^2}\\
+										 % &\leq \frac{2(k^2+1)^2k}{k(k+1)^2} - \frac{k(k+1)}{k(k+1)^2}\\
+										 % &\leq 2 - \frac{1}{k+1}\\
+	% \end{aligned}
+	% $$
+	% It can be seen that in the $k+1$ step that,
+	% $$
+	% \begin{aligned}
+		% 1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{k^2}+\frac{1}{(k+1)^2} &\leq 2-\frac{1}{k+1}\\
+	% \end{aligned}
+	% $$
+	% Thus, by induction, we have proven that for $n \in \mathbb{N}$, we have
+	% $$
+	% \begin{aligned}
+		% 1+\frac{1}{4}+\frac{1}{9}+\cdots+\frac{1}{n^2} &\leq 2-\frac{1}{n}\\
+	% \end{aligned}
+	% $$
+
+
+
+
+% \end{proof}
+
+ 
+
+    
+
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}

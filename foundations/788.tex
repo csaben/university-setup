@@ -1,0 +1,88 @@
+% 
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Theorem 7.88}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+\begin{theorem}{7.88}
+	For $n \in \mathbb{N}$ and $a,b \in \mathbb{Z}$, $[a]_n = [b]_n$ if and only if $a$ and $b$ have the same remainder when divided by $n$.
+\end{theorem}
+\begin{proof}
+	Let $n \in \mathbb{N}$ and $a,b \in \mathbb{Z}$. Through the usage of the bi-conditional theorem
+	it can be shown that $[a]_n = [b]_n$ if and only if $a$ and $b$ have the same remainder when divided by $n$.\\
+
+	$\implies$\\
+	Let $[a]_n = [b]_n$ and $m \in [a]_n$, which then implies that $m \in [b]_n$. Let $-k \in \mathbb{Z}$, we can re-write $m$ as follows,
+	$$
+	\begin{aligned}
+		m - a &= (-k)n\\
+		a &= m + kn\\
+		a &= kn + m\\
+	\end{aligned}
+	$$
+	By Theorem 6.7 (The Division Algorithm), $a$ has the remainder $m$ when divided by $n$. Let $-l \in \mathbb{Z}$, it can similarly be shown that,
+	$$
+	\begin{aligned}
+		m - b &= (-l)n\\	
+		b &= m + kn\\
+		b &= ln + m\\
+	\end{aligned}
+	$$
+	which by Theorem 6.7 , $b$ has the remainder $m$ when divided by $n$. Therefore, if $[a]_n = [b]_n$, then $a$ and $b$ have the same remainder when divided by $n$.\\
+
+	$\impliedby$\\
+	Let $a$ and $b$ have the same remainder when divided by $n$. Additionally, let 
+	$-d, -g \in \mathbb{Z}$ and $r \in \mathbb{Z}$ such that $a = n(-d) + r$ and $b = n(-g) + r$. Then,
+    $$
+    \begin{aligned}
+	    a &= n(-d) + r\\
+	    nd &= r-a\\
+	    r-a &= nd\\
+	    r-a&\in n\mathbb{Z}\\
+	    r &\equiv_n a\\
+	    r &\in [a]_n\\
+    \end{aligned}
+    $$
+    It can be similarly shown that $r \in [b]_n$. Therefore, $[a]_n = [b]_n$. Therefore, if $a$ and $b$ have the same remainder when divided by $n$, then $[a]_n = [b]_n$.\\
+
+    Thus, for $n \in \mathbb{N}$ and $a,b \in \mathbb{Z}$, $[a]_n = [b]_n$ if and only if $a$ and $b$ have the same remainder when divided by $n$.
+\end{proof}
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
