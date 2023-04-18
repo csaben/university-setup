@@ -1,2 +1,8 @@
-*!.tex
-*!.pdf
+*.log
+*.aux
+*.out
+*.toc
+*.gz
+*.pdfsync
+*.synctex.gz
+
