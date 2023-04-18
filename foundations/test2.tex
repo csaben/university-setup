@@ -1,0 +1,80 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Foundations Test 2}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+Foundations of Mathematics} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{}
+\begin{theorem}1
+	If $n \in \mathbb{Z}$ and $n \geq 0$, then $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$.
+\end{theorem}
+\begin{theorem}2
+	The inequality $2^n \leq 2n^{n-1}-1$ holds for all $n \in \mathbb{N}$.
+\end{theorem}
+\begin{theorem}3
+	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.
+\end{theorem}
+\section{}
+\begin{theorem}4
+	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $a \equiv_n b$ then $a^2 \equiv_n b^2$. (recall the definition of $\equiv_n$ from Definition 7.79)
+\end{theorem}
+\begin{theorem}5
+	For an $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
+\end{theorem}
+\begin{theorem}6
+	Define $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
+	$ad=bc$. Then $\sim$ is an equivalence relation.
+\end{theorem}
+\section{(complete)}
+\begin{problem}1
+	Consider the following relation:\\
+	$R = \{(a,a),(a,b),(a,d),(b,d),(c,c),(d,b),(d,c)\}$
+\end{problem}
+\begin{problem}1.1
+ What elements must be add to $R$ to make it reflexive?
+\end{problem}
+To be reflexive, $(b,b)$ and $(d,d)$ must be added to $R$.
+\begin{problem}1.1
+ What elements must be add to $R$ to make it symmetric?
+\end{problem}
+To be symmetric, $(b,a)$, $(d,a)$ and $(c,d)$ must be added to $R$.
+
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
