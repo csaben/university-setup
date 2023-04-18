@@ -53,10 +53,35 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{theorem}5
 	For an $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
 \end{theorem}
-\begin{theorem}6
+\begin{theorem}6 (Need to finish transitive case)
 	Define $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
-	$ad=bc$. Then $\sim$ is an equivalence relation.
+	$ad=bc$. Then $\sim$ is an equivalence relation.\\
+
+	Let $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
+	$ad=bc$. To show that $\sim$ is an equivalence relation, we must show that $\sim$ is reflexive, symmetric, and transitive.\\
+
+	To show that $\sim$ is reflexive, we must show that for all $(a,b) \in \Psi$, $(a,b) \sim (a,b)$.\\
+	It can be shown that, 
+	\begin{align*}
+		(a,b) \sim (a,b) &\Leftrightarrow ab=ba\\
+				 &\Leftrightarrow ab=ab \text{ (commutative property)}\\
+	\end{align*}
+	Therefore, $\sim$ is reflexive.\\
+
+	To show that $\sim$ is symmetric, we must show that for all $(a,b) \in \Psi$ and $(c,d) \in \Psi$, if $(a,b) \sim (c,d)$ then $(c,d) \sim (a,b)$.\\
+	It can be shown that,
+	\begin{align*}
+		(a,b) \sim (c,d) &\Leftrightarrow ad=bc\\
+	\end{align*}
+	and that,
+	\begin{align*}
+		(c,d) \sim (a,b) &\Leftrightarrow cb=da\\
+				 &\Leftrightarrow ad=bc \text{ (commutative property)}\\
+	\end{align*}
+	Therefore, $\sim$ is symmetric.\\
+
 \end{theorem}
+		
 \section{(complete)}
 \begin{problem}1
 	Consider the following relation:\\
