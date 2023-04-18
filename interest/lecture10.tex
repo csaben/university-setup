@@ -1,0 +1,108 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+\usepackage{actuarialsymbol}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{Lecture 10}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+TOI} %if necessary, replace with your course title
+ 
+\maketitle
+
+\section{Todos}
+
+\begin{itemize}
+	\item HW5 we got 100\% (you have the tex and pdf)
+	\item HW6 due next tuesday 10am (7 is due next next double check if i need to)
+	\item hw6 q1 is that amortization schedule that I made last time
+	\item get these notes into Charlie Cruz's notation (or someone not me lol)
+	\item tex lect 7 from kevin and the earlier lect from kat
+	\item today's mantra: write math first then tex in dead moments
+	\item Final is take home (due wednesday 4/26)
+	\item schedule a tex all lecture notes day
+\end{itemize}
+
+\section{3.3 The Sinking Fund Method of Loan Repayment}
+Recall the amortization method
+$$
+\begin{aligned}
+	K_{t} &= I_t + PR_t \\
+\end{aligned}
+$$
+\subsection{3.3.1 Remark:}
+Consider the following payment method:
+\begin{enumerate}
+	\item Pay the interest at time t, $I_t$
+	\item Invest the principal, $PR_t$ into a fund (sinking fund) at a arate $j$ where $j>i$
+	\item Pay off $L$ using a single payment at time $t=n$
+\end{enumerate}
+
+\pagebreak
+
+Observe that ("break even"),
+$$
+\begin{aligned}
+	(K+L_i)S_{\actuarialangle{n}j} &= L\\
+\end{aligned}
+$$
+in practice,
+$$
+\begin{aligned}
+	(K+L_i)S_{\actuarialangle{n}j} &= L+extra\\
+\end{aligned}
+$$
+
+\subsection{3.3.2 e.g.}
+Paul borrows 10,000 for 10 years at an annual effective rate $i$. He accumulates
+the amount needed to repay the loan by using a sinking fund. He makes 10 payments
+of $X$ at the end of each year, each payment includes interest on the loan and the
+payment into the sinking fund which earns an annual effective rate of $8\%$. If the annual
+effective rate on loan had been 2$i$, his total annual payment would have been 1.5$X$. Calculate $i$.\\
+
+Solution:\\
+Observe that X=interest + principal\\
+Principal going into the sinking is X-interest
+
+consequently,
+$$
+\begin{aligned}
+	(X-10000i)S_{\actuarialangle{10}.08}&=10000\\
+	X-10000i &= 690.29
+\end{aligned}
+
+
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
