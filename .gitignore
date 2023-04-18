@@ -5,4 +5,5 @@
 *.gz
 *.pdfsync
 *.synctex.gz
+*.Identifier
 
