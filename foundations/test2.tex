@@ -42,25 +42,99 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \end{theorem}
 \begin{theorem}2
 	The inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n \in \mathbb{N}$.
+
+	Let $n \in \mathbb{N}$. We will show that 
+	the inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n$
+	via induction. For our base case, $n=1$,
+	\begin{align*}
+		2^{1} &\leq 2^{1+1} -2^{1-1}-1\\
+		2 &\leq 4-1-1\\
+		2 &\leq 2
+	\end{align*}
+	which is true, so we proceed with our inductive step. Let us assume that for some $k \in \mathbb{N}$
+	the inequality $2^k \leq 2^{k+1}-2^{k-1}-1$ holds for all $k$. Since $2^k$ is going to be less
+	than $2^{k+1}-2^{k-1}-1$ it will also be less than that plus an additional $2^{k-1}+1$. Hence we can correctly
+	re-write our inequality from,
+	\begin{align*}
+		2^k &\leq 2^{k+1}-2^{k-1}-1
+	\end{align*}
+	to,
+	\begin{align*}
+		2^k &\leq 2^{k+1}-2^{k-1}-1 + (2^{k-1}+1)\\
+		2^k &\leq 2^{k+1}\\
+		    &\leq (2)2^k\\
+	\end{align*}
+	Clearly, for any natural number, $k$, $2^k \leq (2)2^k$. Therefore,
+	the inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n \in \mathbb{N}$.
 \end{theorem}
 \begin{theorem}3
-	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.
+	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.\\
+
+	Let $x$ and $y$ $\in \mathbb{Z}$ the define relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. We will show $R$ is an equivalence relation.\\
+
+	To show $R$ is reflexive, let $x \in \mathbb{Z}$. Then $xRx$ if and only if $3x-5x$ is even. By definition 2.4 it can be seen that,
+	\begin{align*}
+		3x-5x &= 2(-k) \text{ (for some $-k \in \mathbb{Z}$)}\\
+		-2x &= -2k\\
+	\end{align*}
+	which is true for all $x \in \mathbb{Z}$, so $R$ is reflexive.\\
+
+	To show $R$ is symmetric, let $x$ and $y$ $\in \mathbb{Z}$. Then $xRy$ if and only if $3x-5y$ is even. By definition 2.4 it can be seen that,
+	\begin{align*}
+		3x-5y &= 2(-k) \text{ (for some $-k \in \mathbb{Z}$)}\\
+	\end{align*}
+	We can add 2x-2y to both sides to get,
+	\begin{align*}
+		5x-3y &= 2(-k) + 2x-2y\\
+		      &= -2(k-x+y)\\
+	\end{align*}
+	We can then multiply each side by (-1) to get,
+	\begin{align*}
+		(-1)5x-3y &= (-1)(-2(k-x+y))\\
+		-5x+3y&= 2(k-x+y)\\
+		3y-5x &= 2(k-x+y)\\
+	\end{align*}
+	where ($k-x+y$) is some integer. Therefore, since $3y-5x$ is even (Definition 2.4), $yRx$, so
+	$R$ is symmetric.\\
+
+	To show $R$ is transitive, let $x$,$y$,$z$ $\in \mathbb{Z}$ and $xRy$ and $yRz$. 
+	Then $3x-5y$ is even and $3y-5z$ is even. By definition 2.4 it can be seen that,
+	FINISH THIS AND SWITCH TO PROOF FRAME
+
+
+
+	
 \end{theorem}
 \section{}
-\begin{theorem}4
+\begin{theorem}{4 (complete but seems wrong)}
 	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $a \equiv_n b$ then $a^2 \equiv_n b^2$. (recall the definition of $\equiv_n$ from Definition 7.79)
+
+	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. We will show that if $a \equiv_n b$ then $a^2 \equiv_n b^2$.
+	By definition 7.79, $a \equiv_n b$ if and only if $a-b$ is divisible by $n$. It can thus be shown that,
+	\begin{align*}
+		a-b=nk \text{ (for some $k \in \mathbb{Z}$)}\\
+	\end{align*}
+	we can then multiply both sides by $a+b$ to get,
+	\begin{align*}
+		a^2+ab-ba+b^2&=(a+b)nk\\
+		a^2-b^2&=(a+b)nk\\
+		a^2-b^2&=np \text{ (such that $p=(a+b)k$)}\\
+	\end{align*}
+	Therefore, $a^2-b^2$ is divisible by $n$. 
+	Thus, $a^2 \equiv_n b^2$ if $a-b$ is divisible by $n$.
+
 \end{theorem}
 \begin{theorem}5
 	For an $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
 \end{theorem}
-\begin{theorem}{6 Complete but gross}
+\begin{theorem}{6 (complete)} 
 	Define $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
 	$ad=bc$. Then $\sim$ is an equivalence relation.\\
 
 	Let $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
 	$ad=bc$. To show that $\sim$ is an equivalence relation, we must show that $\sim$ is reflexive, symmetric, and transitive.\\
 
-	To show that $\sim$ is reflexive, we must show that for all $(a,b) \in \Psi$, $(a,b) \sim (a,b)$.\\
+	To show that $\sim$ is reflexive, we must show that for all $(a,b) \in \Psi$, $(a,b) \sim (a,b)$.
 	It can be shown that, 
 	\begin{align*}
 		(a,b) \sim (a,b) &\Leftrightarrow ab=ba\\
@@ -68,7 +142,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	\end{align*}
 	Therefore, $\sim$ is reflexive.\\
 
-	To show that $\sim$ is symmetric, we must show that for all $(a,b) \in \Psi$ and $(c,d) \in \Psi$, if $(a,b) \sim (c,d)$ then $(c,d) \sim (a,b)$.\\
+	To show that $\sim$ is symmetric, we must show that for all $(a,b) \in \Psi$ and $(c,d) \in \Psi$, if $(a,b) \sim (c,d)$ then $(c,d) \sim (a,b)$.
 	It can be shown that,
 	\begin{align*}
 		(a,b) \sim (c,d) &\Leftrightarrow ad=bc\\
@@ -80,17 +154,21 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	\end{align*}
 	Therefore, $\sim$ is symmetric.\\
 
-	To show that, $\sim$ is transitive, we must show that for all $(a,b) \in \Psi$, $(c,d) \in \Psi$, and $(e,f) \in \Psi$, if $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$ then $(a,b) \sim (e,f)$.\\
+	To show that, $\sim$ is transitive, we must show that for all $(a,b) \in \Psi$, $(c,d) \in \Psi$, and $(e,f) \in \Psi$, if $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$ then $(a,b) \sim (e,f)$.
 	It can be shown that,
 	\begin{align*}
 		ad&=bc\\
 		fad&=fbc\\
-		f&=\frac{de}{c}\\
+	\end{align*}
+	Since $(c,d)\sim(e,f)$, $cf=de$. We can re-write $f$ as $\frac{de}{c}$. We can finally show that,
+	\begin{align*}
 		adf&=bc(\frac{de}{c})\\
 		adf&=bde\\
-		af&=be\\
+		af&=be \text{,}\\
 	\end{align*}
-	Therefore, $\sim$ is transitive.\\
+	which would follow from $(a,b)\sim(e,f)$. Therefore, $\sim$ is transitive.\\
+
+	Therefore, $\sim$ is an equivalence relation.\\
 \end{theorem}
 		
 \section{(complete)}
