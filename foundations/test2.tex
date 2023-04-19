@@ -40,7 +40,32 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{theorem}1
 	If $n \in \mathbb{Z}$ and $n \geq 0$, then $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$.
 \end{theorem}
-\begin{theorem}{2 (complete)}
+\begin{proof}
+    Let $n \in \mathbb{Z}$ and $n \geq 0$. We will show that $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$ via induction. For our base case, $n=0$,
+    \begin{align*}
+        \sum_{i=0}^{0}0\cdot 0! &= (0+1)!-1\\
+	&= 0
+    \end{align*}
+    which is true, so we proceed with our inductive step. Let us assume that for some $k \in \mathbb{Z}$ 
+    that $k \geq 0$ and $\sum_{i=0}^{k}i\cdot i! = \left(k+1 \right)!-1$. It can be shown that by adding
+    $(k+1)(k+1)!)$ to both sides of the equation we get,
+    \begin{align*}
+	\sum_{i=0}^{k}i\cdot i! + (k+1)(k+1)! &= \left(k+1 \right)!-1 + (k+1)(k+1)!\\
+    \end{align*}
+    Next, by re-arranging with algebra (namely, the distributive property), we can see,
+    \begin{align*}
+		\sum_{i=0}^{k}i\cdot i! + (k+1)(k+1)! &= (1+(k+1))(k+1)!-1\\
+						      &= (k+2)(k+1)!-1
+\end{align*}
+Now, notice that when we have $k=k+1$, we have,
+\begin{align*}
+	\sum_{i=0}^{k+1}i\cdot i! &= ((k+1)+1)!-1\\
+	&= (k+2)(k+1)!-1
+\end{align*}
+which is matches our result from the inductive step, so we have shown that\\ $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$ for all $n \in \mathbb{Z}$ and $n \geq 0$
+by process of induction.
+\end{proof}
+\begin{theorem}{2}
 	The inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n \in \mathbb{N}$.
 	\begin{proof}
 	Let $n \in \mathbb{N}$. We will show that 
@@ -69,21 +94,21 @@ Foundations of Mathematics} %if necessary, replace with your course title
 
 	\end{proof}
 \end{theorem}
-\begin{theorem}{3 (complete)}
+\begin{theorem}{3}
 	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.\\
 \end{theorem}
 
 	\begin{proof}
 	Let $x$ and $y$ $\in \mathbb{Z}$ the define relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. We will show $R$ is an equivalence relation.\\
 
-	To show $R$ is reflexive, let $x \in \mathbb{Z}$. Then $xRx$ if and only if $3x-5x$ is even. By definition 2.4 it can be seen that,
+	To show $R$ is reflexive, let $x \in \mathbb{Z}$. Then $xRx$ if and only if $3x-5x$ is even. By Definition 2.1 it can be seen that,
 	\begin{align*}
 		3x-5x &= 2(-k) \text{ (for some $-k \in \mathbb{Z}$)}\\
 		-2x &= -2k\\
 	\end{align*}
 	which is true for all $x \in \mathbb{Z}$, so $R$ is reflexive.\\
 
-	To show $R$ is symmetric, let $x$ and $y$ $\in \mathbb{Z}$. Then $xRy$ if and only if $3x-5y$ is even. By definition 2.4 it can be seen that,
+	To show $R$ is symmetric, let $x$ and $y$ $\in \mathbb{Z}$. Then $xRy$ if and only if $3x-5y$ is even. By Definition 2.1 it can be seen that,
 	\begin{align*}
 		3x-5y &= 2(-k) \text{ (for some $-k \in \mathbb{Z}$)}\\
 	\end{align*}
@@ -98,11 +123,11 @@ Foundations of Mathematics} %if necessary, replace with your course title
 		-5x+3y&= 2(k-x+y)\\
 		3y-5x &= 2(k-x+y)\\
 	\end{align*}
-	where ($k-x+y$) is some integer. Therefore, since $3y-5x$ is even (Definition 2.4), $yRx$, so
+	where ($k-x+y$) is some integer. Therefore, since $3y-5x$ is even (Definition 2.1), $yRx$, so
 	$R$ is symmetric.\\
 
 	To show $R$ is transitive, let $x$,$y$,$z$ $\in \mathbb{Z}$ and $xRy$ and $yRz$. 
-	Then $3x-5y$ is even and $3y-5z$ is even. By definition 2.4 it can be seen that,
+	Then $3x-5y$ is even and $3y-5z$ is even. By Definition 2.1 it can be seen that,
 	\begin{align*}
 		3x-5y &= 2(k) \text{ (for some $k \in \mathbb{Z}$)}\\
 		3y-5z &= 2(l) \text{ (for some $l \in \mathbb{Z}$)}\\
@@ -119,7 +144,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \end{proof}
 	
 \section{}
-\begin{theorem}{4 (complete but seems wrong)}
+\begin{theorem}{4}
 	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $a \equiv_n b$ then $a^2 \equiv_n b^2$. (recall the definition of $\equiv_n$ from Definition 7.79)
 	\end{theorem}
 
@@ -142,7 +167,47 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{theorem}5
 	For an $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
 \end{theorem}
-\begin{theorem}{6 (complete)} 
+\begin{proof}
+	Let $n \geq 4$. We will show that one can obtain $n$ dollars using only \$2 and \$5 bills.\\
+	In other words, there exist non-negative integers $a$ and $b$ such that $n = 2a + 5b$ for all $n \geq 4$.\\
+	We will prove this via strong induction.\\
+
+	For our base case we will prove the cases for $n=2$, $4$, and $5$ directly.\\
+	For $n = 2$, we can use one \$2 bill: $2 = 2\cdot 1 + 5\cdot 0$ $(a=1, b=0)$\\
+	For $n = 4$, we can use two \$2 bills: $4 = 2\cdot 2 + 5\cdot 0$ $(a=2, b=0)$\\
+	For $n = 5$, we can use one \$5 bill: $5 = 2\cdot 0 + 5\cdot 1$ $(a=0, b=1)$\\
+
+	For our inductive hypothesis, we will assume that for $5\leq k \leq m$ can be 
+	obtained using only \$2 and \$5 bills such that $k,m \in \mathbb{Z}$.\\
+
+	We will now prove that $k+1$ can be obtained using only \$2 and \$5 bills.
+	Since $k-1$ can be obtained using only \$2 and \$5 bills, we can 
+	see that,
+	\begin{align*}
+		k-1 = 2a + 5b \text{ (for some $a,b \in \mathbb{Z}$)}
+	\end{align*}
+	which can be rewritten as,
+	\begin{align*}
+		(k+1)-2 = 2a + 5b \\
+	\end{align*}
+	Hence, by adding adding a \$2 bill to the \$2 and \$5 bills used to obtain $k-1$, we can obtain $k+1$ using only \$2 and \$5 bills.\\
+
+	Thus, we have shown via strong induction that for any $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
+
+
+	% Now, let's consider the case for $n \geq 8$. We know that any integer greater than or equal to 8 can be written as a multiple of 
+	% 4 plus a remainder in the range [0, 3]. In other words, we can write $n = 4k + r$,
+	% where $k$ and $r \in \mathbb{Z}$ such that $0 \leq r \leq 3$.\\
+
+	% Notice that for the cases $r = 0, 1, 2,$ or $3$, we already have a way to obtain the amount with only \$2 and \$5 bills as demonstrated above. Therefore, for any $n \geq 8$, we can represent the value as the sum of multiples of 4 (using only \$2 bills) and one of the four remainder cases.\\
+
+% We will now go through each of the four remainder cases.\\
+% For $r=0$, we have $n = 4k \Rightarrow n = 2\cdot(2k) + 5\cdot 0$.\\
+% For $r=1$, we have $n = 4k + 1 \Rightarrow n = 2\cdot(2k) + 5\cdot 1$.\\
+% For $r=2$, we have $n = 4k + 2 \Rightarrow n = 2\cdot(2k) + 5\cdot() k$.\\
+% For $r=3$, we have $n = 4k + 3 \Rightarrow n = 2\cdot(2k + 1) + 5\cdot 2$\\
+\end{proof}
+\begin{theorem}{6} 
 	Define $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
 	$ad=bc$. Then $\sim$ is an equivalence relation.\\
 \end{theorem}
@@ -188,7 +253,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	Therefore, $\sim$ is an equivalence relation.\\
 \end{proof}
 		
-\section{(complete)}
+\section{}
 \begin{problem}1
 	Consider the following relation:\\
 	$R = \{(a,a),(a,b),(a,d),(b,d),(c,c),(d,b),(d,c)\}$
