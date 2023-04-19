@@ -40,9 +40,9 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{theorem}1
 	If $n \in \mathbb{Z}$ and $n \geq 0$, then $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$.
 \end{theorem}
-\begin{theorem}2
+\begin{theorem}{2 (complete)}
 	The inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n \in \mathbb{N}$.
-
+	\begin{proof}
 	Let $n \in \mathbb{N}$. We will show that 
 	the inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n$
 	via induction. For our base case, $n=1$,
@@ -66,10 +66,14 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	\end{align*}
 	Clearly, for any natural number, $k$, $2^k \leq (2)2^k$. Therefore,
 	the inequality $2^n \leq 2^{n+1}-2^{n-1}-1$ holds for all $n \in \mathbb{N}$.
-\end{theorem}
-\begin{theorem}3
-	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.\\
 
+	\end{proof}
+\end{theorem}
+\begin{theorem}{3 (complete)}
+	Define the relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. Then $R$ is an equivalence relation.\\
+\end{theorem}
+
+	\begin{proof}
 	Let $x$ and $y$ $\in \mathbb{Z}$ the define relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. We will show $R$ is an equivalence relation.\\
 
 	To show $R$ is reflexive, let $x \in \mathbb{Z}$. Then $xRx$ if and only if $3x-5x$ is even. By definition 2.4 it can be seen that,
@@ -99,16 +103,27 @@ Foundations of Mathematics} %if necessary, replace with your course title
 
 	To show $R$ is transitive, let $x$,$y$,$z$ $\in \mathbb{Z}$ and $xRy$ and $yRz$. 
 	Then $3x-5y$ is even and $3y-5z$ is even. By definition 2.4 it can be seen that,
-	FINISH THIS AND SWITCH TO PROOF FRAME
+	\begin{align*}
+		3x-5y &= 2(k) \text{ (for some $k \in \mathbb{Z}$)}\\
+		3y-5z &= 2(l) \text{ (for some $l \in \mathbb{Z}$)}\\
+	\end{align*}
+	We can add the two equations to get,
+	\begin{align*}
+		3x-5y + 3y-5z &= 2(k) + 2(l)\\
+		3x-5z - 2y &= 2(k+l)\\
+			   &= 2(k+l+y)\\
+	\end{align*}
+	We see that $3x-5z$ is even, so $xRz$ and $R$ is transitive.\\
 
-
-
+	In conclusion, $R$ is an equivalence relation since $R$ is reflexive, symmetric, and transitive.
+\end{proof}
 	
-\end{theorem}
 \section{}
 \begin{theorem}{4 (complete but seems wrong)}
 	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $a \equiv_n b$ then $a^2 \equiv_n b^2$. (recall the definition of $\equiv_n$ from Definition 7.79)
+	\end{theorem}
 
+	\begin{proof}
 	Let $a$,$b \in \mathbb{Z}$ and $n \in \mathbb{N}$. We will show that if $a \equiv_n b$ then $a^2 \equiv_n b^2$.
 	By definition 7.79, $a \equiv_n b$ if and only if $a-b$ is divisible by $n$. It can thus be shown that,
 	\begin{align*}
@@ -118,19 +133,21 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	\begin{align*}
 		a^2+ab-ba+b^2&=(a+b)nk\\
 		a^2-b^2&=(a+b)nk\\
-		a^2-b^2&=np \text{ (such that $p=(a+b)k$)}\\
+		a^2-b^2&=np \text{  }\boxed{\text{such that $p=(a+b)k$}}\\
 	\end{align*}
 	Therefore, $a^2-b^2$ is divisible by $n$. 
 	Thus, $a^2 \equiv_n b^2$ if $a-b$ is divisible by $n$.
+\end{proof}
 
-\end{theorem}
 \begin{theorem}5
 	For an $n \geq 4$, one can obtain $n$ dollars using only \$2 and \$5 bills.
 \end{theorem}
 \begin{theorem}{6 (complete)} 
 	Define $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
 	$ad=bc$. Then $\sim$ is an equivalence relation.\\
+\end{theorem}
 
+	\begin{proof}
 	Let $\Psi = \{(a,b): a,b \in \mathbb{Z}, b\neq 0\}$ and define a relation $\sim$ on $\Psi$ via $(a,b) \sim (c,d)$ if and only if
 	$ad=bc$. To show that $\sim$ is an equivalence relation, we must show that $\sim$ is reflexive, symmetric, and transitive.\\
 
@@ -169,7 +186,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	which would follow from $(a,b)\sim(e,f)$. Therefore, $\sim$ is transitive.\\
 
 	Therefore, $\sim$ is an equivalence relation.\\
-\end{theorem}
+\end{proof}
 		
 \section{(complete)}
 \begin{problem}1
