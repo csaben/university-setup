@@ -62,7 +62,7 @@ Now, notice that when we have $k=k+1$, we have,
 	\sum_{i=0}^{k+1}i\cdot i! &= ((k+1)+1)!-1\\
 	&= (k+2)(k+1)!-1
 \end{align*}
-which is matches our result from the inductive step, so we have shown that\\ $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$ for all $n \in \mathbb{Z}$ and $n \geq 0$
+which matches our result from the inductive step, so we have shown that\\ $\sum_{i=0}^{n}i\cdot i! = \left(n+1 \right)!-1$ for all $n \in \mathbb{Z}$ and $n \geq 0$
 by process of induction.
 \end{proof}
 \begin{theorem}{2}
@@ -99,7 +99,7 @@ by process of induction.
 \end{theorem}
 
 	\begin{proof}
-	Let $x$ and $y$ $\in \mathbb{Z}$ the define relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. We will show $R$ is an equivalence relation.\\
+	Let $x$ and $y$ $\in \mathbb{Z}$ and define relation $R$ on $\mathbb{Z}$ such that $xRy$ if and only if $3x-5y$ is even. We will show $R$ is an equivalence relation.\\
 
 	To show $R$ is reflexive, let $x \in \mathbb{Z}$. Then $xRx$ if and only if $3x-5x$ is even. By Definition 2.1 it can be seen that,
 	\begin{align*}
@@ -114,6 +114,7 @@ by process of induction.
 	\end{align*}
 	We can add 2x-2y to both sides to get,
 	\begin{align*}
+		3x-5y + 2x-2y &= 2(-k) + 2x-2y\\
 		5x-3y &= 2(-k) + 2x-2y\\
 		      &= -2(k-x+y)\\
 	\end{align*}
@@ -232,17 +233,23 @@ by process of induction.
 	and that,
 	\begin{align*}
 		(c,d) \sim (a,b) &\Leftrightarrow cb=da\\
+				 &\Leftrightarrow da=cb\\
 				 &\Leftrightarrow ad=bc \text{ (commutative property)}\\
 	\end{align*}
 	Therefore, $\sim$ is symmetric.\\
 
 	To show that, $\sim$ is transitive, we must show that for all $(a,b) \in \Psi$, $(c,d) \in \Psi$, and $(e,f) \in \Psi$, if $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$ then $(a,b) \sim (e,f)$.
-	It can be shown that,
+	Let $(a,b) \sim (c,d)$ and $(c,d) \sim (e,f)$.
+	Since, $(a,b)\sim(c,d)$ it can be shown that,
 	\begin{align*}
 		ad&=bc\\
-		fad&=fbc\\
 	\end{align*}
-	Since $(c,d)\sim(e,f)$, $cf=de$. We can re-write $f$ as $\frac{de}{c}$. We can finally show that,
+	and if we multiply each side by $f$, we get,
+	\begin{align*}
+		fad&=fbc\\
+		adf&=bcf\\
+	\end{align*}
+	Also, since $(c,d)\sim(e,f)$, $cf=de$ we can re-write $f$ as $\frac{de}{c}$. We can finally show that,
 	\begin{align*}
 		adf&=bc(\frac{de}{c})\\
 		adf&=bde\\
