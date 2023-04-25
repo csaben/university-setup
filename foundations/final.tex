@@ -41,42 +41,44 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	Given $a \in \mathbb{Z}$, if $5\mid2a$ then $5\mid a$
 \end{theorem}
 \begin{proof}
-	Let $a \in \mathbb{Z}$ and $5\mid2a$. 
+	Let $a \in \mathbb{Z}$ and $5\mid2a$. Suppose for the sake of
+	contradiction $5\nmid a$. This would imply that $5\mid2$ which
+	is a contradiction. Therefore, $5\mid a$ must be true.
 \end{proof}
 \begin{theorem}{3}
-	For all $n \in \mathbb{N}$, 1\cdot2 + 2\cdot3 + \cdots + n(n+1) = \frac{n(n+1)(n+2)}{3}$
+	For all $n \in \mathbb{N}$,$ 1\cdot2 + 2\cdot3 + \cdots + n(n+1) = \frac{n(n+1)(n+2)}{3}$
 \end{theorem}
 	\begin{proof}
 		Let $n \in \mathbb{N}$. We proceed by induction.\\
 		\textbf{Base Case:} $n = 1$\\
-		\begin{align}
+		\begin{align*}
 			1\cdot2 &= \frac{1(1+1)(1+2)}{3}\\
 			1\cdot2 &= \frac{1(1+1)(1+2)}{3}\\
 			2 &= \frac{1(2)(3)}{3}\\
 			2 &= \frac{6}{3}\\
 			2 &= 2
-		\end{align}
+		\end{align*}
 		\textbf{Inductive Hypothesis:} Assume that $1\cdot2 + 2\cdot3 + \cdots + k(k+1) = \frac{k(k+1)(k+2)}{3}$ for
 		some integer $k$. 
 		\textbf{Inductive Step:} We must show that $1\cdot2 + 2\cdot3 + \cdots + k(k+1) + (k+1)(k+2) = \frac{(k+1)(k+2)(k+3)}{3}$.
 		This can be simplified on the right hand side such that it can be restated as,
-		\begin{align}
+		\begin{align*}
 		    1\cdot2 + 2\cdot3 + \cdots + k(k+1) + (k+1)(k+2) &= \frac{k(k+1)(k+2)}{3}\\
 							&= \frac{(k^2+2k+k+2)(k+3)}{3}\\
 							&= \frac{k^3+3k^2+2k^2+6k+k^2+3k+2k+6}{3}\\
 							&= \frac{k^3+6k^2+11k+6}{3}
-		\end{align}
+		\end{align*}
 		We begin by adding $(k+1)(k+2)$ to both sides of the equation in the inductive hypothesis to get
 		$1\cdot2 + 2\cdot3 + \cdots + k(k+1) + (k+1)(k+2) = \frac{k(k+1)(k+2)}{3} + (k+1)(k+2)$.
 		It can be then shown that,
-		\begin{align}
+		\begin{align*}
 		    1\cdot2 + 2\cdot3 + \cdots + k(k+1) + (k+1)(k+2) &= \frac{k(k+1)(k+2)}{3} + (k+1)(k+2)\\
 								     &= \frac{k(k+1)(k+2)+3(k+1)(k+2)}{3}\\
 								     &= \frac{(k^2+k)(k+2)+3(k^2+3k+2)}{3}\\
 								     &= \frac{k^3+2k^2+k^2+2k+3k^2+9k+6}{3}\\
 								     &= \frac{k^3+3k^2+2k+3k^2+9k+6}{3}\\
 								     &= \frac{k^3+6k^2+11k+6}{3}\\
-		\end{align}
+		\end{align*}
 		This is the same as the equation we got in the inductive step.
 		Therefore, by process of induction, for all $n \in \mathbb{N}$, $1\cdot2 + 2\cdot3 + \cdots + n(n+1) = \frac{n(n+1)(n+2)}{3}$.
 	\end{proof}
@@ -90,6 +92,7 @@ Foundations of Mathematics} %if necessary, replace with your course title
 		It can be shown that by multiplying each side of the equation by $c$ that $ac-bc=nkc$.
 		Since $kc$ is an integer, $ac\equiv_nbc$ by definition 7.79.
 \end{proof}
+\section{}
 	
 \begin{theorem}{5}
 	For all integers $n \geq 0, 24\mid(5^{2n}-1)$.
@@ -97,35 +100,91 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \begin{proof}
 	Let $n \in \mathbb{Z}$ such that $n \geq 0$. We proceed by induction.\\
 	\textbf{Base Case:} $n = 0$\\
-	\begin{align}
+	\begin{align*}
 		5^{2(0)}-1 &= 24k\\
 		5^{0}-1 &= 24k\\
 		1-1 &= 24k\\
 		0 &= 24k
-	\end{align}
+	\end{align*}
+	which is true for all $k \in \mathbb{Z}$.\\
 	\textbf{Inductive Hypothesis:} Assume that $24\mid(5^{2k}-1)$ for some integer $k$.
 	This can be restated as $5^{2k}-1=24k$ for some integer $k$.\\
 	\textbf{Inductive Step:} We must show that $24\mid(5^{2(k+1)}-1)$.
-	We begin by multiplying each side of the inductive hypothesis by $5^{2k}$ to get,
-	\begin{align}
-		5^{4}\cdot(5^{2k}-1) &= 24k\cdot5^{4}\\
-		5^{2(k+1)}-5^{4} &= 24k\cdot5^{4}
-	\end{align}
-	We then add and subtract $
-	\begin{align}
-	\end{align}
-
-
-
+	First, by multiplying each side of the inductive hypothesis by $5^{2}$ we get,
+	\begin{align*}
+		5^{2}\cdot(5^{2k}-1) &= 24k\cdot5^{2}\\
+		5^{2k+2}-5^{2} &= 24k\cdot5^{2}
+	\end{align*}
+	Secondly, we can then replace $5^{2}$ with $25$ on the left hand side to yield,
+	\begin{align*}
+		5^{2k+2}-25  &= 24k\cdot5^2\\
+	\end{align*}
+	We then make the -25 into -1-24 which yields,
+	\begin{align*}
+		5^{2k+2}-24-1  &= 24k\cdot5^2\\
+	\end{align*}
+	Next, we add over the $-24$ from the left hand side to yield,
+	\begin{align*}
+		5^{2k+2}-1 &= 24k\cdot5^2+24\\
+	\end{align*}
+	Finally, factoring out the $24$ from the right hand side of the equation yields,
+	\begin{align*}
+		5^{2k+2}-1 &= 24(k5^2+1)
+	\end{align*}
+	Since $k5^2+1$ is an integer, we have shown that $24\mid(5^{2(k+1)}-1)$.
+	Therefore, by process of induction, for all integers $n \geq 0, 24\mid(5^{2n}-1)$.
 \end{proof}
 
 \begin{theorem}{6}
+	For all integers $x$, if $x^2-6x+5$ is even, then $x$ is odd.
 \end{theorem}
 \begin{proof}
+	Let $x$ be an integer such that $x^2-6x+5$ is even. We proceed by contraposition.\\
+	\textbf{Contrapositive:} If $x$ is even, then $x^2-6x+5$ is odd.\\
+	Let $x$ be an even integer. Then by definition 2.1 there exists an integer $k$ such
+	that $x=2k$.
+	We can then substitute $2k$ for $x$ in $x^2-6x+5$ to yield,
+	\begin{align*}
+		(2k)^2-6(2k)+5 &= 4k^2-12k+5\\
+		&= 2(2k^2-6k+2)+1
+	\end{align*}
+	By definition 2.1, $2(2k^2-6k+2)$ is an even integer. Therefore, $x^2-6x+5$ is odd when
+	$x$ is even.
+	Therefore, by contraposition, for all integers $x$, if $x^2-6x+5$ is even, then $x$ is odd.
 \end{proof}
-\begin{theorem}{6} 
+\section{}
+\begin{theorem}{7 (assuming conclusion?)} 
+	Let $a,b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $12a \not\equiv_n 12b$ then $a \nmid b$.
 \end{theorem}
 	\begin{proof}
+		Let $a,b \in \mathbb{Z}$ and $n \in \mathbb{N}$. Suppose $12a \not\equiv_n 12b$ and $n\mid12$. We will
+		show that this leads to a contradiction. By definition 2.1, there exists an integer $k$ such that
+		$12=nk$. By multiplying each side by $(a-b)$ we get,
+		\begin{align*}
+			12(a-b) &= nk(a-b)\\
+			12a-12b &= n(ka-kb)\\
+		\end{align*}
+		which is a contradiction because this would mean by definition 7.79 that
+		$12a \equiv_n 12b$. Therefore, if $12a \not\equiv_n 12b$ then $a \nmid b$.
+\end{proof}
+\begin{theorem}{8} 
+	For all $a,b \in \mathbb{Z},$ if $a$ is even and $b$ is odd, then 6 does not 
+	divide $a^2+b^2$.
+\end{theorem}
+	\begin{proof}
+		Let $a,b \in \mathbb{Z}$ such that by definition 2.1, there exists an integers $k,l$ such that $a=2k$ and $b=2l+1$.
+		Suppose that $6\mid(a^2+b^2)$. It can be shown that, 
+		\begin{align*}
+			a^2+b^2&=(2k)^2+(2l+1)^2\\
+			       &=4k^2+4l^2+4l+1\\
+				      &=2(2k^2+2l^2+2l)+1\\
+		\end{align*}
+		where $2k^2+2l^2+2l$ is an integer. 
+		Therefore, by definition 2.1, $a^2+b^2$ is odd. This is a contradiction because
+		an odd number cannot be divisible by an even number (such as 6). Therefore, for all $a,b \in \mathbb{Z},$ if $a$ is even and $b$ is odd, then 6 does not
+		divide $a^2+b^2$.
+		
+
 \end{proof}
 		
 \section{}
