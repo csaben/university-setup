@@ -41,9 +41,19 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	Given $a \in \mathbb{Z}$, if $5\mid2a$ then $5\mid a$
 \end{theorem}
 \begin{proof}
-	Let $a \in \mathbb{Z}$ and $5\mid2a$. Suppose for the sake of
-	contradiction $5\nmid a$. This would imply that $5\mid2$ which
-	is a contradiction. Therefore, $5\mid a$ must be true.
+	Let $a \in \mathbb{Z}$ such that $5\mid2a$. This can be written as
+	$2a = 5k$ for some $k \in \mathbb{Z}$. Now we consider,
+	\begin{align*}
+		a &=6a-4a\\
+		  &=3(2a)-2(2a)\\
+		  &=3(5k)-2(5k) \text{ Using hypothesis}\\
+		  &=5(3k-2k)\\
+	\end{align*}
+	Since $3k-2k \in \mathbb{Z}$, this implies that $5\mid a$.
+
+	% Let $a \in \mathbb{Z}$ and $5\mid2a$. Suppose for the sake of
+	% contradiction $5\nmid a$. This would imply that $5\mid2$ which
+	% is a contradiction. Therefore, $5\mid a$ must be true.
 \end{proof}
 \begin{theorem}{3}
 	For all $n \in \mathbb{N}$,$ 1\cdot2 + 2\cdot3 + \cdots + n(n+1) = \frac{n(n+1)(n+2)}{3}$
@@ -153,12 +163,12 @@ Foundations of Mathematics} %if necessary, replace with your course title
 	Therefore, by contraposition, for all integers $x$, if $x^2-6x+5$ is even, then $x$ is odd.
 \end{proof}
 \section{}
-\begin{theorem}{7 (assuming conclusion?)} 
+\begin{theorem}{7} 
 	Let $a,b \in \mathbb{Z}$ and $n \in \mathbb{N}$. If $12a \not\equiv_n 12b$ then $a \nmid b$.
 \end{theorem}
 	\begin{proof}
-		Let $a,b \in \mathbb{Z}$ and $n \in \mathbb{N}$. Suppose $12a \not\equiv_n 12b$ and $n\mid12$. We will
-		show that this leads to a contradiction. By definition 2.1, there exists an integer $k$ such that
+		Let $a,b \in \mathbb{Z}$ and $n \in \mathbb{N}$. For sake of contradiction,
+		suppose $12a \not\equiv_n 12b$ and $n\mid12$. By definition 2.1, there exists an integer $k$ such that
 		$12=nk$. By multiplying each side by $(a-b)$ we get,
 		\begin{align*}
 			12(a-b) &= nk(a-b)\\
@@ -173,15 +183,22 @@ Foundations of Mathematics} %if necessary, replace with your course title
 \end{theorem}
 	\begin{proof}
 		Let $a,b \in \mathbb{Z}$ such that by definition 2.1, there exists an integers $k,l$ such that $a=2k$ and $b=2l+1$.
-		Suppose that $6\mid(a^2+b^2)$. It can be shown that, 
+		For the sake of contradiction, suppose that $6\mid(a^2+b^2)$. It can be shown that, 
 		\begin{align*}
 			a^2+b^2&=(2k)^2+(2l+1)^2\\
 			       &=4k^2+4l^2+4l+1\\
 				      &=2(2k^2+2l^2+2l)+1\\
 		\end{align*}
 		where $2k^2+2l^2+2l$ is an integer. 
-		Therefore, by definition 2.1, $a^2+b^2$ is odd. This is a contradiction because
-		an odd number cannot be divisible by an even number (such as 6). Therefore, for all $a,b \in \mathbb{Z},$ if $a$ is even and $b$ is odd, then 6 does not
+		Therefore, by definition 2.1, $a^2+b^2$ is odd. 
+		This would imply that there exists an integer $m$ such that,
+		$(a^2+b^2)=6m$, which can be rewritten as,
+		\begin{align*}
+			\frac{(a^2+b^2)}{6} = m\\ 
+		\end{align*}
+		Since $a^2+b^2$ is odd, this implies $m$ is not an integer, which is a contradiction.
+		% an odd number cannot be divisible by an even number (such as 6).
+		Therefore, for all $a,b \in \mathbb{Z},$ if $a$ is even and $b$ is odd, then 6 does not
 		divide $a^2+b^2$.
 		
 
