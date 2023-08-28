@@ -1,0 +1,255 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{actuarialsymbol}
+\usepackage{graphicx}
+\graphicspath{ {./images/ } }
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{TOI Final Celebration}%replace X with the appropriate number
+\title{Theory of Interest Final Celebration}%replace X with the appropriate number
+\author{Clark Saben\\ %replace with your name
+}% 3/6/23 lecture} %if necessary, replace with your course title
+% \title{}%replace X with the appropriate number
+%sample envs
+% \begin{theorem}[Theorem 1.1]
+% \begin{lemma}[Lemma 1.1]
+% \begin{exercise}[Exercise 1.1]
+% \begin{problem}[Problem 1.1]
+% \begin{question}[Question 1.1]
+% \begin{corollary}[Corollary 1.1]
+\maketitle
+
+1. 
+\begin{itemize}
+    \item Bob wants to purchase a perpetuity paying 1000 per year with the first payment due at the end of year 11. Bob can purchase it by either paying 900 per year at the end of each year for 10 years, or paying K per year at the end of each year for the first five years, and then nothing for the next 5 years. 
+    
+    (A) If $i$ is the annual effective interest rate, what is $(1+i)^{10}$?\\
+    We begin by noting that,\\
+    \begin{align*}
+	    v^{10}&= \frac{1}{(1+i)^{10}}
+    \end{align*}
+    We can approach this problem by using two methods of calculating the present value and setting them equal to each other.\\
+    
+    Method 1:\\
+    \begin{align*}
+	    PV &= \frac{900(1-v^{10})}{(1-v)}
+    \end{align*}
+    Method 2:\\
+    \begin{align*}
+	    PV &= \frac{k(1-v^5)}{(1-v)}+1000v^5
+    \end{align*}
+    Setting these two equations equal to each other, we can solve for $v^{10}$,\\
+    \begin{align*}
+        \frac{900(1-v^{10})}{(1-v)} &= \frac{k(1-v^5)}{(1-v)}+1000v^5\\
+	900(1-v^{10}) &= k(1-v^5)+1000v^5(1-v)\\
+	(1-v^{10}) &= \frac{k(1-v^5)}{900}+1.1v^5(1-v)\\
+	v^{10} &= 1-\frac{k(1-v^5)}{900}-1.1v^5(1-v)\\
+	\frac{1}{(1+i)^{10}} &= 1-\frac{k(1-v^5)}{900}-1.1v^5(1-v)\\
+	(1+i)^{10} &= \frac{1}{1-\frac{k(1-v^5)}{900}-1.1v^5(1-v)}\\
+    \end{align*}
+    Ordinarily I would have liked to only have one value I didn't know of and would use root finding. However,
+    that option is not present to me so I leave my answer in the form of an expression.
+    
+    (B) Find the value of $K$.\\
+    Similarly, we can set the two equations equal to each other and solve for $K$.\\
+    \begin{align*}
+	\frac{900(1-v^{10})}{(1-v)} &= \frac{k(1-v^5)}{(1-v)}+1000v^5\\
+	k(1-v^5) &= 900(1-v^{10})-1000v^5(1-v)\\
+	k&= 900\frac{(1-v^{10})}{(1-v^5)}-1000v^5\\
+    \end{align*}
+    Again, I would have liked to have found $i$ in part A and used it here, but I leave my answer in the form of an expression.
+    
+\end{itemize}
+
+2. 
+\begin{itemize}
+    \item  Smith borrows 5000 on January 1, 2005. She repays the loan with 20 annual payments starting January 1, 2006. The payments in even-numbered years are $Y$ each and the payments in odd-numbered years are $X$ each. The annual effective interest rate is $i = 0.08$ and the total of all 20 loan payments is 10233. Find the values of $X$ and $Y$.
+	We begin by restating thr problem mathematically:\\
+	\begin{align*}
+	    10x+10y &= 10233\\
+	    x+y &= 1023.3\\
+	    y &= 1023.3-x\\
+	\end{align*}
+	The odd and even payments can be represented as two sums which are written in the form of a geometric series.\\
+	recall,\\
+	\begin{align*}
+	    \text{Geometric Series} &= \frac{(1-r^n)}{1-r}\\
+	\end{align*}
+	So, $S_x$ and $S_y$ can be written as,\\
+	\begin{align*}
+	    S_x &= \frac{(1+i_x)^{2\cdot10-1}-1}{i}\\
+	    S_y &= \frac{(1+i_y)^{2\cdot10}-1}{i}\\
+	\end{align*}
+	Given that,\\
+	\begin{align*}
+		a_x &=v\\
+		i_x &=v^2\\
+		n_x &= 10\\
+		a_y &=v^2\\
+		i_y &=v^2\\
+		n_y &= 10\\
+	\end{align*}
+	We can write,\\
+	\begin{align*}
+		S_x&=5.38\\
+		S_y&=5.50\\
+	\end{align*}
+	Finally, we can write,\\
+	\begin{align*}
+	    5000 &= 5.38x+5.50y\\
+	    5000 &= 5.38x+5.50(1023.3-x)\\
+	    5000 &= 5.38x+5618.15-5.50x\\
+	    5000 &= -0.38x+5618.15\\
+	    -618.15 &= -0.38x\\
+	    x &= 1626.71\\
+	    y &= 1023.3-1626.71\\
+	    y &= -603.41 \text{ which makes no sense in this context}\\
+	\end{align*}
+	I believe I am making some error in my calculations but find that my general direction made sense. I hope that counts for something.
+\end{itemize}
+
+3. 
+\begin{itemize}
+    \item A mortgage with term $n$, $n$ even, and level payments $K$ has an outstanding balance at time $\frac{n}{2}$ that is 60\% of the original loan amount. 
+    
+    (A) Calculate the interest payment received by the bank at time $\frac{n}{2} + 1$.\\
+    Let $L$ be the loan value, we will express the interest payment at $\frac{n}{2} +1$ in terms of the loan and the interest rate.\\
+    The interest paid at time $\frac{n}{2}+1$ is,
+    \begin{align*}
+	    I_{\frac{n}{2}+1}&=OB_{\frac{n}{2}}i\\
+			     &=L\cdot0.6\cdot i\\
+    \end{align*}
+    % $$\frac{n}{2}=.6L$$
+    % Interest payment at, $$\frac{n}{2}+1 = 0.6L$$
+    
+    (B) What fraction of $K$ in the first payment at time 1 goes towards interest?\\
+    Time 1 occurs when $n=2$. We can express the interest payment at time 1 in terms of the loan and the interest rate.\\
+    The interest paid at time 1 is,
+    \begin{align*}
+	    I_1&=OB_0i\\
+	       &=L\cdot i\\
+       \end{align*}
+       We know that the first payment at time 1 is $K$. We can express the fraction of $K$ that goes towards interest as,
+       $$\frac{I_1}{K} = \frac{L\cdot i}{K}$$
+
+
+    % $$\frac{L\cdot}{k} = \frac{\text{ interest payment at time 1}}{k} = \frac{0.6L}{k}$$
+\end{itemize}
+
+\pagebreak
+4. 
+\begin{itemize}
+    \item A 10-year 100 par value bond bearing a 10\% coupon rate payable semiannually, and redeemable at 105, is bought to yield 8\% convertible semiannually.\\
+    (A) Find the price of the bond.\\
+
+    We begin with listing our variables. Face value(F), Period(N), redemption value(C), coupon rate (r), yield rate(j). We will
+    also adjust our quantities to be for per annun rather than semi-annun. We will denote the given information as,
+    \begin{align*}
+	    F&=100\\
+	    N&=20\\
+	    C&=105\\
+	    r&=0.10\\
+	    j&=0.04\\
+    \end{align*}
+
+    We can now use the formula for the price of a bond,\\
+    \begin{align*}
+	    \text{Price} &= Fra_{\actuarialangle{20}.04}+105(\frac{1}{1+.04})^{20}\\
+			 &= 100(0.1)(\frac{1-(\frac{1}{1+.04})^{20}}{.04})+105(\frac{1}{1+.04})^{20}\\
+			 &= 135.90 + 47.92\\
+			 &= 183.82\\
+    \end{align*}
+    This bond is being traded at a premium.\\
+    (B) Determine the nominal yield rate, based on the par value.\\
+    The nominal yield rate is the total amount of interest paid per year divided by the par value.\\
+    $$\frac{10}{100} = 10\%$$
+    Hence,
+    $$\text{Nominal Yield Rate} = 10\%$$
+
+    (C) Determine the nominal yield rate, based on the redemption value.\\
+    The nominal yield rate is the total amount of interest paid per year divided by the redemption value.\\
+    $$\frac{10}{105} = 9.52\%$$
+    Hence,
+    $$\text{Nominal Yield Rate} = 9.52\%$$
+    
+    % (A) Find the price of the bond.
+    % We must first adjust for the fact we prefer to work with annual quantities.\\
+
+    % maturity is 10 years, so we have 20 periods.\\
+    % coupon rate is 10\%, so we have 5 USD per period for the coupon value.\\
+    % redemption value is 10\%, so we have 105 USD per period.\\
+    % yield is 8\%, so we have 4\% per period.\\
+
+    % we will denote the above information as follows:\\
+    % \begin{align*}
+	    % c&=5\\
+	    % r&=0.04\\
+	    % n&=20\\
+	    % F&=105\\
+    % \end{align*}
+    % The price of the bond will be:\\
+    % $$PV_{coupon}+PV_{redemption}$$
+    % such that,\\
+    % $$PV_{coupon}=c\frac{[1-(\frac{1}{1+r})^n]}{r}$$
+    % and,\\
+    % $$PV_{redemption}= \frac{F}{(1+r)^n}$$
+    % where $v=\frac{1}{1+r}$\\
+
+    % so,\\
+    % \begin{align*}
+	    % PV_{coupon} &= 5\frac{[1-(\frac{1}{1+0.04})^{20}]}{0.04}\\
+			% &= 67.95\\
+	     % PV_{redemption} &= \frac{105}{(1+0.04)^{20}}\\
+			     % &= 47.92\\
+    % \end{align*}
+    % So finally,\\
+    % \begin{align*}
+	    % PV_{bond} &= PV_{coupon}+PV_{redemption}\\
+		      % &= 67.95+47.92\\
+		      % &= 115.87\\
+    %   \end{align*}
+    % (B) Determine the nominal yield rate, based on the par value.
+    % First, let's find the nominal yield,\\
+    % $$\frac{10\% * 100}{2}=5$$
+    % Next, the nominal yield rate,\\
+    % $$\frac{5}{100}*2*100\%=10\%$$
+    
+    % (C) Determine the nominal yield rate, based on the redemption value.
+    % First, let's find the nominal yield,\\
+    % $$\frac{10\% * 105}{2}=5.25$$
+    % Next, the nominal yield rate,\\
+    % $$\frac{5}{105}*2*100\%=9.52\%$$
+\end{itemize}
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
