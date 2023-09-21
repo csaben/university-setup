@@ -43,37 +43,43 @@ Abstract Alegbra PSET} %if necessary, replace with your course title
 \end{problem}
 
 \begin{question}{A1}
-	$a*b = \sqrt{\lvert\ ab \rvert}$ on $\mathbb{Q}$
+	$a*b = \sqrt{\lvert\ ab \rvert}$ on the set $\mathbb{Q}$
 \end{question}
 
-\begin{proof}
 	% should we elaborate about repeating value of root(2)?
 	Let $a = 1, b = 2$. Then $a*b = \sqrt{\lvert\ 1*2 \rvert} = \sqrt{2} \notin \mathbb{Q}$. Therefore $*$ is not an operation on $\mathbb{Q}$.
-\end{proof}
 
     
 \begin{question}{A2}
+	% R  is the set of real numbers
 	% alnb on the set x in R st x > 0
 	$a*b = a\ln(b)$ on $\{x \in \mathbb{R} \mid x > 0\}$
 \end{question}
 
-\begin{proof}
 	% do I need to elaborate? like show that it is repeating?
-	Let $a = 1, b = 2$. Then $a*b = 1\ln(2) = \ln(2) \notin \{x \in \mathbb{R} \mid x > 0\}$. Therefore $*$ is not an operation on $\{x \in \mathbb{R} \mid x > 0\}$.
+	The operation, $a*b = a\ln(b)$, is an operation on $\{x \in \mathbb{R} \mid x > 0\}$, since for all 
+	$a, b \in \{x \in \mathbb{R} \mid x > 0\}$, $a$ will always be real and $ln(b)$ will always be real, since $b > 0$.
+	Thus, $a*b = a\ln(b) \in \{x \in \mathbb{R} \mid x > 0\}$.
 
-\end{proof}
 
     
 \begin{question}{A3}
-	% alnb on the set x in R st x > 0
 	$a*b$ is a root of the equation $x^2 - a^2b^2 = 0$ on the set $\mathbb{R}$
 \end{question}
 
-\begin{proof}
 	% see notes to finish this
+	The predefined $a*b$ is not an operation on $\mathbb{R}$, since $a*b$ is not
+	uniquely defined for all $a, b \in \mathbb{R}$, $a \neq 0$, and $b \neq 0$.
+	If $a \neq 0$ and $b \neq 0$, then $a*b = \pm ab$ has two roots,
+	$a*b = ab$ and $a*b = -ab$.
 
-\end{proof}
+\begin{question}{A4}
+	% alnb on the set x in R st x > 0
+	Subtraction, on the set $\mathbb{Z}$
+\end{question}
 
+	% see notes to finish this
+	Subtraction is an operation on $\mathbb{Z}$, since for all $a, b \in \mathbb{Z}$, $a - b \in \mathbb{Z}$.
 
  
 % --------------------------------------------------------------
