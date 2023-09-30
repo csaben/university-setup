@@ -1,0 +1,110 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{A2-Draft\_CSaben}
+\author{Clark Saben}
+
+ 
+\maketitle
+
+\begin{problem}{1}
+Let $G$ and $H$ be groups and consider their direct product $G \times H$. Suppose that $e$ is the identity in $G$. Prove that the subset $S=\{(e, h): h \in H\}$ of $G \times H$ is a subgroup of $G \times H$.
+
+\begin{proof}
+	Let $G$ and $H$ be groups and consider their direct product $G \times H$. Suppose that $e$ is the identity in $G$.
+	\begin{enumerate}
+		\item $S \neq \emptyset$ since $e \in G$ and $e \in H$.
+		\item Let $(e, h_1), (e, h_2) \in S$ for some $h_1, h_2 \in H$. Then $(e, h_1)\cdot(e, h_2) = (e, h_1h_2) \in S$ since $h_1h_2 \in H$.
+		\item Let $(e, h) \in S$. Then $(e, h)^{-1} = (e, h^{-1}) \in S$ since $h^{-1} \in H$.
+	\end{enumerate}
+	Therefore, $S$ is a subgroup of $G \times H$.
+	
+\end{proof}
+\end{problem}
+
+
+\begin{problem}{2}
+Consider the function $f: \mathbb{Z} \rightarrow \mathbb{Z}$ defined in Exercise $\mathrm{B} 4$ on page 63 . Prove that $f$ is an element of the symmetric group $S_{\mathbb{Z}}$.
+
+Hints: To prove that $f$ is injective, suppose that $f\left(n_{1}\right)=f\left(n_{2}\right)$, where $n_{1}, n_{2} \in \mathbb{Z}$. Then, to show that $n_{1}=n_{2}$, you will have to consider cases about possible parities (even or odd) of $n_{1}$ and $n_{2}$. You will also have to consider cases to prove that $f$ is surjective.
+\begin{proof}
+	Let $f: \mathbb{Z} \rightarrow \mathbb{Z}$ be defined as $f(n) = n+1$ if $n$ is even and $f(n) = n - 1$ if $n$ is odd. We will show that $f$ is injective and surjective.
+	\begin{enumerate}
+		\item Let $n_1, n_2 \in \mathbb{Z}$ such that $f(n_1) = f(n_2)$. Then we have three cases:	
+		\begin{enumerate}
+			\item If $n_1$ and $n_2$ are both even, then $n_1 + 1 = n_2 + 1 \implies n_1 = n_2$.
+			\item If $n_1$ and $n_2$ are both odd, then $n_1 - 1 = n_2 - 1 \implies n_1 = n_2$.
+			\item If $n_1$ is even and $n_2$ is odd, then $n_1 + 1 = n_2 - 1 \implies n_1 \neq n_2$.
+		\end{enumerate}
+		For all these cases $f(n_1) = f(n_2) \implies n_1 = n_2$. Therefore, $f$ is injective.
+		\item Let $n \in \mathbb{Z}$. Then we have two cases:
+		\begin{enumerate}
+			\item Let $m = n-1$. Then, if $n$ is even, $f(m) = f(n-1) = n-1+1 = n$.
+			\item Let $m = n+1$. Then, if $n$ is odd, $f(m) = f(n+1) = n+1-1 = n$.
+		\end{enumerate}
+		Therefore, $f$ is surjective since for all $n \in \mathbb{Z}$, there exists $m \in \mathbb{Z}$ such that $f(m) = n$.
+	\end{enumerate}
+	Thus, $f$ is a bijection and therefore an element of $S_{\mathbb{Z}}$.
+
+\end{proof}
+\end{problem}
+
+\begin{problem}{3}
+Let $D_{4}$ be the group of symmetries of the square. Construct a Cayley table for $D_{4}$. In the table, use the symbols from Class Notes for Chapter 7. In the left column and top row, order the symbols as follows: $R_{0}, R_{90}, R_{180}, R_{270}, \rho_{A}, \rho_{B}, \rho_{H}, \rho_{V}$. The table must be created in ${ }^{2} \mathrm{~T}_{\mathrm{E}} \mathrm{X}$. In this problem, I only need to see the table.
+\begin{proof}
+	%% Cayley Table
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+	\hline
+	\( \circ \)    & \(R_{0}\) & \(R_{90}\) & \(R_{180}\) & \(R_{270}\) & \(\rho_A\) & \(\rho_B\) & \(\rho_H\) & \(\rho_V\) \\
+	\hline
+	\(R_{0}\) & \(R_{0}\)  & \(R_{90}\)  & \(R_{180}\)  & \(R_{270}\)  & \(\rho_A\)  & \(\rho_B\)  & \(\rho_H\)  & \(\rho_V\)  \\
+	\hline
+	\(R_{90}\) & \(R_{90}\) & \(R_{180}\) & \(R_{270}\)  & \(R_{0}\)    & \(\rho_V\)  & \(\rho_H\)  & \(\rho_A\)  & \(\rho_B\)  \\
+	\hline
+	\(R_{180}\) & \(R_{180}\) & \(R_{270}\) & \(R_{0}\)    & \(R_{90}\)   & \(\rho_B\)  & \(\rho_A\)  & \(\rho_V\)  & \(\rho_H\)  \\
+	\hline
+	\(R_{270}\) & \(R_{270}\) & \(R_{0}\)   & \(R_{90}\)   & \(R_{180}\)  & \(\rho_H\)  & \(\rho_V\)  & \(\rho_B\)  & \(\rho_A\)  \\
+	\hline
+	\(\rho_A\)  & \(\rho_A\) & \(\rho_H\)   & \(\rho_B\)    & \(\rho_V\)    & \(R_{0}\)  & \(R_{180}\) & \(R_{270}\) & \(R_{90}\) \\
+	\hline
+	\(\rho_B\)  & \(\rho_B\) & \(\rho_V\)   & \(\rho_A\)    & \(\rho_H\)    & \(R_{180}\) & \(R_{0}\)  & \(R_{270}\) & \(R_{90}\) \\
+	\hline
+	\(\rho_H\)  & \(\rho_H\) & \(\rho_B\)   & \(\rho_V\)    & \(\rho_A\)    & \(R_{270}\) & \(R_{90}\) & \(R_{0}\)  & \(R_{180}\) \\
+	\hline
+	\(\rho_V\)  & \(\rho_V\) & \(\rho_A\)   & \(\rho_H\)    & \(\rho_B\)    & \(R_{90}\) & \(R_{270}\) & \(R_{180}\)  & \(R_{0}\)  \\
+	\hline
+	\end{tabular}
+\end{proof}
+\end{problem}
+
+
+\end{document}
