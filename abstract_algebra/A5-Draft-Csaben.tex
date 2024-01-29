@@ -1,0 +1,247 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+ 
+\title{A5-Draft\_CSaben}
+\author{Clark Saben}
+
+ 
+\maketitle
+
+
+1. (7 points) Consider the alternating group $A_{4}$ and its subgroup $H=\langle(134)\rangle$.
+
+\begin{problem}{1a}
+(a) Calculate the right cosets of $H$ in $A_{4}$. Do not repeat. Each right coset must be written as $H \alpha=\{\ldots\}$, for example,
+
+$$
+H(1)=\{(1),(134),(143)\}
+$$
+
+Hint: Do not use any elements that are not in $A_{4}$. For example, $H(123)$ is a coset of $H$ in $A_{4}$, but $H(12)$ is not.
+\end{problem}
+
+$$
+\begin{aligned}
+	H(1) &= \{(1),(134),(143)\} \\
+	H(123) &= \{(123),(1234),(124)\} \\
+	H(132) &= \{(132),(14)(23),(243)\} \\
+	H(421) &= \{(421),(423),(42)(13)\} \\
+\end{aligned}
+$$
+
+\begin{problem}{1b}
+(b) Show that $H$ is not a normal subgroup of $A_{4}$.
+
+Hint: Again, do not use any elements that are not in $A_{4}$.
+\end{problem}
+
+For $H$ to be a normal subgroup of $A_4$, we must have $gH = Hg$ for all $g \in A_4$. However, we can see that $H(123) \neq (123)H$ since $(123)H = \{(123),(234),(14)(23)\}$ and $H(123) = \{(123),(1234),(124)\}$.
+
+\begin{problem}{1c}
+(c) What is the index $\left(A_{4}: H\right)$ of $H$ in $A_{4}$ ? Justify your answer.
+\end{problem}	
+
+The index of $H$ in $A_4$ is the number of right cosets of $H$ in $A_4$. Since we have 4 cosets, the index is 4. In other words,
+$\text{index}=\left(A_{4}: H\right) = 4$.
+
+\pagebreak
+
+2. (7 points) Let $G=\{x \in \mathbb{R}: x \neq-1\}$. Define an operation $*$ on $G$ by $a * b=a+b+a b$. For example, $2 * 3=2+3+2 \cdot 3=11$. Then $\langle G, *\rangle$ is a group. (Take this as given.) Recall that $\mathbb{R}^{*}$ is the group of nonzero real numbers with ordinary multiplication.
+
+\begin{problem}{2a}
+(a) Prove that $f: \mathbb{R}^{*} \rightarrow G$ defined by $f(x)=x-1$ is a homomorphism.
+\end{problem}
+
+\begin{proof}
+	Let $a,b \in \mathbb{R}^*$. Then we have
+	$$
+	\begin{aligned}
+		f(ab) &= ab - 1 \\
+	\end{aligned} 
+	$$
+	and, 
+	$$
+	\begin{aligned}
+		f(a)f(b) &= (a-1)*(b-1) \\
+		&= (a-1) + (b-1) + (a-1)(b-1) \\
+		&= a + b - 2 + ab - a - b + 1 \\
+		&= ab - 1 \\
+	\end{aligned} 
+	$$
+	Therefore, $f(ab) = f(a)f(b)$ and $f$ is a homomorphism.
+\end{proof}
+
+\begin{problem}{2b}
+(b) Find the kernel of $f$. Justify your answer.
+\end{problem}
+
+The kernel of $f$ is the set of all elements in $\mathbb{R}^*$ that map to the identity in $G$. Since $f(x) = x - 1$, we have $f(x) = 0$ when $x = 1$. Thus, the kernel of $f$ is $\{1\}$.
+
+\pagebreak
+
+3. (6 points) Let $H$ be any subgroup of $G$ and let $K$ be a normal subgroup of $G$. Define a subset $S$ of $G$ by
+
+
+$$
+S=\{h k: h \in H \text { and } k \in K\}
+$$
+
+
+\begin{problem}{3}
+Prove that $S$ is a subgroup of $G$.
+
+Hint: Recall that $K$ is a normal subgroup of $G$ if and only if $K a=a K$ for every $a \in G$.
+\end{problem}
+\begin{proof}
+	Note that $S$ is nonempty since $H$ and $K$ are nonempty. 
+	Note $K$ is a normal subgroup of $G$ if and only if $Ka = aK$ for every $a \in G$.
+	Let $a,b \in S$. Then $a = hk$ and $b = h'k'$ for some $h,h' \in H$ and $k,k' \in K$. 
+	Then we have,
+	$$
+	\begin{aligned}
+		ab^{-1} &= (hk)(h'k')^{-1} \\
+		&= (hk)(k'^{-1}h'^{-1}) \\
+		&= h(kk'^{-1})h'^{-1} \\
+	\end{aligned}
+	$$
+	Since $H$ is a subgroup of $G$, $h(kk'^{-1})h'^{-1} \in H$.
+	%why?
+	%Because both H and G are subgroups of G, and the product of two elements in a group is also in the group.
+	Since $K$ is a normal subgroup of $G$, $kk'^{-1} \in K$.
+	%why?
+	% bc Kh=hK => K=hKh^-1, so in this case K=kk'^-1
+	So, $h(kk'^{-1})h'^{-1} \in H$ and $kk'^{-1} \in K$.
+	% more logic:
+	% Also, $h(kk'^{-1}) \in H$ and $h'^{-1} \in H$.
+	% Thus, $h(kk'^{-1})h'^{-1} \in S$.
+	Therefore, $S$ is a subgroup of $G$.
+\end{proof}
+
+
+
+
+% 1. (6 points) Let $\left\langle G_{1}, \cdot\right\rangle$ and 
+% 	$\left\langle G_{2}, *\right\rangle$ be groups with identities 
+% 	$e_{1}$ and $e_{2}$, respectively. 
+% 	Suppose that $f: G_{1} \rightarrow G_{2}$ is an isomorphism. 
+% 	Prove that $f\left(e_{1}\right)=e_{2}$. Write - when you 
+% 	multiply elements of $G_{1}$, and $*$ when you multiply elements of $G_{2}$.
+
+% \begin{proof}{1} 
+% 	Since $f: G_{1} \rightarrow G_{2}$ is an isomorphism,
+% 	that is, it preserves the operation the for any elements 
+% 	$a,b \in G_1, $ we have $f(a \cdot b) = f(a)*f{b}$.
+% 	Note that by definition, $f: G_{1} \rightarrow G_{2}$ is also bijective, and so surjective.
+% 	Let $b \in G_2$ is the image of some $a \in G_1$ since 
+% 	$f$ is surjective. Then, $b = f(a)$ for some $a \in G_1$.
+% 	Let $e_1 \in G_1$ and $e_2 \in G_2$ be the identities
+% 	of each respectve group. Then,
+% 	$$
+% 	\begin{aligned}
+% 		f(e_1)*f(a) &= f(e_1 \cdot a) \\
+% 			    &= f(a) \\
+% 			    &= b \\
+% 	\end{aligned}
+% 	$$
+% 	and
+% 	$$
+% 	\begin{aligned}
+% 		f(e_1)*b &= b \\
+% 			 &= e_2 * b. 
+% 	\end{aligned}
+% 	$$
+% 	Thus, $f(e_1)*b = e_2 * b$ because $b = f(a)$, and $f(e_1)*f(a) = f(e_1 \cdot a)$
+% 	by the isomorphism property of $f$. Thus, $f(e_1) = e_2$.
+
+% \end{proof}
+
+% 2. (6 points) Let $G$ be a group and let $a \in G$ be an element of order 6 . Construct a Cayley table (written in $\mathrm{LT}_{\mathrm{EX}} \mathrm{X}$ ) for the cyclic subgroup $\langle a\rangle$ of $G$ generated by $a$. Each element in your table must be written as $a^{r}$, where $r \in\{0,1, \ldots, 5\}$. If you wish, you can write $a^{0}$ as $e$, and $a^{1}$ as $a$.
+
+% $$
+% \begin{array}{|c|c|c|c|c|c|c|}
+% \hline
+% \cdot & e & a & a^2 & a^3 & a^4 & a^5 \\
+% \hline
+% e & e & a & a^2 & a^3 & a^4 & a^5 \\
+% \hline
+% a & a & a^2 & a^3 & a^4 & a^5 & e \\
+% \hline
+% a^2 & a^2 & a^3 & a^4 & a^5 & e & a \\
+% \hline
+% a^3 & a^3 & a^4 & a^5 & e & a & a^2 \\
+% \hline
+% a^4 & a^4 & a^5 & e & a & a^2 & a^3 \\
+% \hline
+% a^5 & a^5 & e & a & a^2 & a^3 & a^4 \\
+% \hline
+% \end{array}
+% $$
+
+% \newpage
+
+% 3. (8 points) Let $D_{4}$ be the group of symmetries of the square. \\
+
+% (a) List all distinct cyclic subgroups of $D_{4}$. Write each cyclic subgroup as $\langle a\rangle=\{\ldots\}$, using the symbols from Class Notes for Chapter 7: $R_{0}, R_{90}, R_{180}, R_{270}, \rho_{A}, \rho_{B}, \rho_{H}$, and $\rho_{V}$. For example, $\left\langle\rho_{A}\right\rangle=\left\{R_{90}, R_{180}, \rho_{V}\right\}$ (that is incorrect). Do not repeat. \\
+
+% (b) Find a subgroup $H$ of $D_{4}$ such that $H \neq D_{4}$ and $H$ is not cyclic. Explain why your $H$ is not cyclic. \\
+
+% Hint: See Assignment 2, but be careful if your table for $D_{4}$ was not correct. \\
+
+% (a)
+% \begin{itemize}
+%     \item \( \langle R_{0} \rangle = \{R_{0}\} \)%  since $R_{0}$ is the identity.
+%     \item \( \langle R_{90} \rangle = \{R_{0}, R_{90}, R_{180}, R_{270}\} \)
+%     \item \( \langle R_{180} \rangle = \{R_{0}, R_{180}\} \)
+%     \item \( \langle R_{270} \rangle = \{R_{0}, R_{270}\} \)
+%     \item \( \langle \rho_{A} \rangle = \{R_{0}, \rho_{A}\} \)
+%     \item \( \langle \rho_{B} \rangle = \{R_{0}, \rho_{B}\} \)
+%     \item \( \langle \rho_{H} \rangle = \{R_{0}, \rho_{H}\} \)
+%     \item \( \langle \rho_{V} \rangle = \{R_{0}, \rho_{V}\} \)
+% \end{itemize}
+% (b)
+
+% The subgroup $H$ of $D_4$ such that $H \neq D_4$ and $H$ is not cyclic is,
+% $H = \{R_{0}, \rho_{H}, \rho_{V}, \rho_{A}\, \rho_{B}\}$.
+% Recall, from (a),
+% \begin{itemize}
+%     \item \( \langle R_{0} \rangle = \{R_{0}\} \)%  since $R_{0}$ is the identity.
+%     \item \( \langle \rho_{A} \rangle = \{R_{0}, \rho_{A}\} \)
+%     \item \( \langle \rho_{B} \rangle = \{R_{0}, \rho_{B}\} \)
+%     \item \( \langle \rho_{H} \rangle = \{R_{0}, \rho_{H}\} \)
+%     \item \( \langle \rho_{V} \rangle = \{R_{0}, \rho_{V}\} \).
+% \end{itemize}
+% Thus, no element in $H$ generates $H$ therefore this subgroup of $D_4$ is not cyclic.
+
+
+
+
+\end{document}
